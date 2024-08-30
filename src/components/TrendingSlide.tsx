@@ -4,6 +4,7 @@ import { article } from '@/interface';
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css';
 import Image from 'next/image';
+import Link from 'next/link';
 import { shuffleArticle } from '@/utils';
 import { newsArticles } from '@/data';
 
@@ -34,22 +35,23 @@ const TrendingSlide = () => {
                 return (
                     <SplideSlide 
                     key={article.id}
-                    className="grid grid-cols-2 gap-4 cursor-pointer items-center p-2"
                     >
-                        <div>
-                        <Image 
-                        width={600}
-                        height={600}
-                        src={article.imageUrl}
-                        alt={article.title}
-                        className="w-full aspect-video object-center object-cover rounded-sm"
-                        />
-                        </div>
-                        <section className='flex flex-col gap-2'>
-                            <p className='text-primary font-medium bg-secondary p-1 px-2 w-max rounded-sm'>{article.category}</p>
-                            <h3 className='text-2xl text-accent font-semibold font-primary'>{article.title}</h3>
-                            <p className='text-base'>{article.briefDescription}</p>
-                        </section>
+                        <Link href={`/article/${article.id}`} className="grid grid-cols-2 gap-4 cursor-pointer items-center p-2">
+                            <div>
+                            <Image 
+                            width={600}
+                            height={600}
+                            src={article.imageUrl}
+                            alt={article.title}
+                            className="w-full aspect-video object-center object-cover rounded-sm"
+                            />
+                            </div>
+                            <section className='flex flex-col gap-2'>
+                                <p className='text-primary font-medium bg-secondary p-1 px-2 w-max rounded-sm'>{article.category}</p>
+                                <h3 className='text-2xl text-accent font-semibold font-primary'>{article.title}</h3>
+                                <p className='text-base'>{article.briefDescription}</p>
+                            </section>
+                        </Link>
                     </SplideSlide>
                 )
             })}

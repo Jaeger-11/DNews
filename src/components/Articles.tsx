@@ -15,7 +15,7 @@ const Articles = () => {
                 return (
                     <Link href={`/article/${id}`} key={id} className="cursor-pointer block p-2 border-b border-secondary text-dark hover:bg-secondary transition-colors">
                         <div className="grid grid-cols-3 gap-2 hover:text-accent">
-                            <h3 className="text-xl leading-tight font-medium py-1 font-primary capitalize">{title}</h3>
+                            <h3 className="text-xl leading-tight font-medium font-primary capitalize">{title}</h3>
                             <p className="text-sm leading-tight">{briefDescription}</p>
                             <Image 
                             width={200}
