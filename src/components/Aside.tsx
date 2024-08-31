@@ -1,3 +1,6 @@
+import { newsArticles } from "@/data";
+import { article } from "@/interface";
+import Link from "next/link";
 
 const Aside = () => {
 
@@ -23,8 +26,12 @@ const Aside = () => {
             {/* Top Stories */}
             <h3 className="text-base text-primary font-semibold pb-2">Top Stories</h3>
             <ul className="flex flex-col gap-1 list-disc px-2">
-                {topStoriesTitles.slice(0, 11).map((item) => {
-                    return <li key={item} className="text-sm leading-tight cursor-pointer text-dark hover:text-accent hover:font-medium transition-colors"> {item} </li>
+                {newsArticles.slice(0, 11).map((item:article) => {
+                    return (
+                    <li key={item.id} className="text-sm leading-tight cursor-pointer text-dark hover:text-accent hover:font-medium transition-colors"> 
+                     <Link href={`/article/${item.id}`}>{item.title} </Link> 
+                    </li>
+                )
                 })}
             </ul>
         </section>
