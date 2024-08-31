@@ -1,4 +1,5 @@
-
+import Link from "next/link";
+import Logo from "./Logo";
 const Sidebar:React.FC = () => {
 
     const newsCategories = [
@@ -23,12 +24,8 @@ const Sidebar:React.FC = () => {
   return (
     // Work on category scroll overflow
     <aside className="h-svh min-h-max p-4 flex flex-col w-max justify-between border-r">
-        <section>
-            {/* Logo */}
-            <h2 className="font-bold text-2xl text-accent font-primary"><span className="text-accent">D</span>News</h2>
-            <p className="text-primary text-xs italic">Stay Informed, Stay Ahead!</p>
-        </section>
-        <p className="text-sm underline cursor-pointer">Login / Signup</p>
+        <Logo style=""/>
+        <Link href='/authenticate' className="text-sm underline cursor-pointer hover:text-accent transition-colors">Login / Signup</Link>
         <section>
             {/* Search  */}
             <div className="border-b mb-4 border-primary bg-transparent flex gap-2 items-center w-max">

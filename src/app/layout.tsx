@@ -30,18 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfairDisplay.variable} ${lato.variable}`}>
       <body className="font-secondary flex">
-        <Sidebar/>
-        <section className="flex-1 h-svh overflow-y-scroll">
-          {/*Short Advertisement */}
-          <HorizontalAds/>
-          <main className="grid grid-cols-4">
-            <div className="col-span-3">
-              {children}
-            </div>
-            <Aside/>
-          </main>
-        </section>
-        <Footer/>
+        {children}
       </body>
     </html>
   );

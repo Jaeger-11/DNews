@@ -17,7 +17,7 @@ const TrendingSlide = () => {
     // let trends = shuffleArticle(newsArticles) || newsArticles.slice(0,4);
 
   return (
-    <div className='mb-6' >
+    <div className='mb-6 pb-2 border-b' >
         <h2 className="font-bold text-xl uppercase mb-2 font-primary text-primary">Trending</h2>
 
         <Splide 

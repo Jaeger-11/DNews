@@ -7,7 +7,7 @@ import { formatDate } from "@/utils";
 const Articles = () => {
 
   return (
-    <section>
+    <section className="">
         <h2 className="font-bold text-xl uppercase mb-2 font-primary text-primary">Latest News</h2>
         <main className="grid grid-cols-1 pb-10">
             {newsArticles.map((item:article) => {
