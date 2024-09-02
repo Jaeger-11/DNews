@@ -40,6 +40,10 @@ const page = ({params}: {params: {id:string}}) => {
 
         <section>
           {/* COMMENTS */}
+          <h2 className="text-xl font-primary uppercase font-semibold text-primary mb-2">Comments</h2>
+          <div className="w-2/3 p-2 border rounded-md">
+            <input type="text" name="" id="" placeholder="Add your opinion / comment"  className="w-full border-none placeholder:text-base text-primary outline-none bg-transparent"/>
+          </div>
         </section>
       </article>
       : undefined}
