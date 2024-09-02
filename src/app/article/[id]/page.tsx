@@ -31,7 +31,7 @@ const page = ({params}: {params: {id:string}}) => {
           </p>
           <p>
             {article.tags.map((item) => {
-              return <span className="p-1 bg-secondary mr-2 capitalize text-sm text-primary">{item} </span>
+              return <span key={item} className="p-1 bg-secondary mr-2 capitalize text-sm text-primary">{item} </span>
             })}
           </p>
         </div>
