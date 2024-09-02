@@ -24,8 +24,9 @@ const Layout = ({
             </div>
             <Aside/>
           </main>
+          <Footer/>
         </section>
-        <Footer/>
+        {/* <Footer/> */}
       </div>
   )
 }

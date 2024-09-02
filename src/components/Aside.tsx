@@ -1,6 +1,7 @@
 import { newsArticles } from "@/data";
 import { article } from "@/interface";
 import Link from "next/link";
+import VerticalAds from "./VerticalAds";
 
 const Aside = () => {
 
@@ -19,9 +20,6 @@ const Aside = () => {
 
   return (
     <div className="p-4 bg-secondary min-h-[90svh]">
-        <div>
-            {/* Vertical Advertisement */}
-        </div>
         <section>
             {/* Top Stories */}
             <h3 className="text-base text-primary font-semibold pb-2">Top Stories</h3>
@@ -35,6 +33,9 @@ const Aside = () => {
                 })}
             </ul>
         </section>
+        <div className="my-8">
+            <VerticalAds/>
+        </div>
     </div>
   )
 }
