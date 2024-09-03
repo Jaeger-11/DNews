@@ -1,5 +1,5 @@
 import { article } from "./interface";
-import { newsArticles } from "./data";
+import { useAxios } from "./axios";
 
 export const formatDate = (dateString: string): string => {
     const date = new Date(dateString);
@@ -35,4 +35,9 @@ export const shuffleArticle = (list:article[]) => {
     }
     
     return updatedList.slice(0,4)
+}
+
+export const fetchArticles = async () => {
+    const { data } = await useAxios('/posts')
+    return data;
 }

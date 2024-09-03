@@ -2,8 +2,6 @@ import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 import HorizontalAds from "./HorizontalAds";
 import Aside from "./Aside";
-import TrendingSlide from "./TrendingSlide";
-import Articles from "./Articles";
 
 const Layout = ({
     children,
@@ -26,7 +24,6 @@ const Layout = ({
           </main>
           <Footer/>
         </section>
-        {/* <Footer/> */}
       </div>
   )
 }

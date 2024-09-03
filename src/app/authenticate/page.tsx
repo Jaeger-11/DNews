@@ -1,5 +1,4 @@
 import Authentication from "@/components/Authentication"
-import Back from "@/components/Back"
 
 const page = () => {
   return (

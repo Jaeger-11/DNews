@@ -3,9 +3,11 @@ import { article } from "@/interface";
 import Image from "next/image";
 import Link from "next/link";
 import { formatDate } from "@/utils";
+import { fetchArticles } from "@/utils";
 
 const Articles = () => {
-
+    const data = fetchArticles();
+    // console.log(data)
   return (
     <section className="">
         <h2 className="font-bold text-xl uppercase mb-2 font-primary text-primary">Latest News</h2>
