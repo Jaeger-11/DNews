@@ -6,7 +6,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState:content = {
     category: "latest news",
-    search: ""
+    param: ""
 }
 
 const contentSlice = createSlice({
@@ -17,7 +17,7 @@ const contentSlice = createSlice({
             state.category = payload.category;
         },
         setSearch: (state, {payload}) => {
-            state.search = payload.search;
+            state.param = payload.text;
         }
     }
 })

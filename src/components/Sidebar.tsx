@@ -13,9 +13,10 @@ import { useState } from "react";
 const Sidebar:React.FC = () => {
     const dispatch = useAppDispatch();
     const { username, uid } = useAppSelector((state) => state.user );
-    const { category } = useAppSelector((state) => state.content)
-    const [ selectedCategory, setSelectedCategory ] = useState<string>('Latest News')
-    
+    const { param, category } = useAppSelector((state) => state.content)
+    const [ selectedCategory, setSelectedCategory ] = useState<string>(category || 'Latest News');
+
+    let it:string = ''
     onAuthStateChanged(auth, (user) => {
         if(user){
             let userInfo = {email: user.email, username: user.displayName, uid: user.uid}
@@ -29,10 +30,6 @@ const Sidebar:React.FC = () => {
         signOut(auth).then(() => {
             // Sign-out successful.
             dispatch(logOut())
-            // dispatch(updateNotification({text:"User Successfully Signed Out!", imageUrl: 'show'}))
-            // setTimeout(() => {
-            //     dispatch(closeNotification())
-            // }, 2000);
         }).catch((error) => {
         // An error happened.
         console.log(error)
@@ -42,6 +39,11 @@ const Sidebar:React.FC = () => {
     const selectCategory = (cat:string) => {
         setSelectedCategory(cat);
         dispatch(setCategory({category:cat}));
+    }
+
+    const handleSearch = ({target}:React.ChangeEvent<HTMLInputElement>) => {
+        it = target.value
+        dispatch(setSearch({text:it}));
     }
 
   return (
@@ -61,7 +63,7 @@ const Sidebar:React.FC = () => {
             {/* Search  */}
             <div className="border-b mb-4 border-primary pb-1 bg-transparent flex gap-2 items-center w-max">
                 <svg className="size-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="#A9A9A9" fillRule="evenodd" d="M4 9a5 5 0 1110 0A5 5 0 014 9zm5-7a7 7 0 104.2 12.6.999.999 0 00.093.107l3 3a1 1 0 001.414-1.414l-3-3a.999.999 0 00-.107-.093A7 7 0 009 2z"></path> </g></svg>
-                <input className="bg-transparent outline-none border-none placeholder-shown:text-sm placeholder-shown:text-gray text-sm place" placeholder="Search" type="text" name="search" id="search" />
+                <input onChange={handleSearch} className="bg-transparent outline-none border-none placeholder-shown:text-sm placeholder-shown:text-gray text-sm place" placeholder="Search" type="text" name="search" id="search" />
             </div>
             {/* Categories */}
             <div >
@@ -69,7 +71,7 @@ const Sidebar:React.FC = () => {
                 <ul className="flex flex-col gap-1 text-sm h-[50svh] overflow-y-scroll pb-6 pl-1">
                 {
                     newsCategories.map((newsCategory) => {
-                        return <li onClick={() => selectCategory(newsCategory)} key={newsCategory} className={` ${selectedCategory.toLowerCase() === newsCategory.toLowerCase() ? ' text-accent font-semibold' : 'text-primary'} capitalize w-max cursor-pointer hover:text-accent hover:scale-105 hover:font-medium transition-all`}>{newsCategory}</li>
+                        return <li onClick={() => selectCategory(newsCategory)} key={newsCategory} className={` ${category.toLowerCase() === newsCategory.toLowerCase() ? ' text-accent font-semibold' : 'text-primary'} capitalize w-max cursor-pointer hover:text-accent hover:scale-105 hover:font-medium transition-all`}>{newsCategory}</li>
                     })
                 }
                 </ul>

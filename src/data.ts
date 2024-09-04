@@ -247,7 +247,7 @@ export const newsArticles = [
       brief: "As gas prices continue to climb, consumers are increasingly turning to electric vehicles.",
       content: "With gasoline prices soaring, the automotive industry is seeing a significant shift toward electric vehicles (EVs). Consumers are drawn to the promise of lower fuel costs, government incentives, and a smaller carbon footprint. This trend is expected to accelerate as more affordable models enter the market, and charging infrastructure expands.",
       publishedDate: "2024-08-28T14:20:00Z",
-      imageUrl: "https://example.com/evs.jpg",
+      imageUrl: "https://images.unsplash.com/photo-1615383690110-62acb993993e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       tags: ["Electric Vehicles", "Automotive", "Sustainability"]
     },
     {
@@ -258,7 +258,7 @@ export const newsArticles = [
       brief: "Artificial Intelligence is transforming the field of medical diagnostics, offering faster and more accurate results.",
       content: "The integration of AI in healthcare has led to a revolution in diagnostic procedures. Machine learning algorithms can now analyze medical images and patient data with remarkable accuracy, enabling early detection of diseases and personalized treatment plans. This technological advancement is paving the way for a new era in medicine.",
       publishedDate: "2024-08-29T09:30:00Z",
-      imageUrl: "https://example.com/ai_healthcare.jpg",
+      imageUrl: "https://plus.unsplash.com/premium_photo-1699479318024-1f9d529f58f9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YWklMjBoZWFsdGhjYXJlfGVufDB8MHwwfHx8MA%3D%3D",
       tags: ["AI", "Healthcare", "Technology"]
     },
     {
@@ -269,7 +269,7 @@ export const newsArticles = [
       brief: "A new study reveals that the world’s oceans are warming at an accelerated rate, posing severe threats to marine life.",
       content: "According to recent research, global ocean temperatures are rising faster than previously thought. This rapid warming is affecting marine ecosystems, causing coral bleaching, shifting species distributions, and threatening fisheries. Scientists warn that urgent action is needed to mitigate the impacts of climate change.",
       publishedDate: "2024-08-30T07:45:00Z",
-      imageUrl: "https://example.com/ocean_warming.jpg",
+      imageUrl: "https://images.unsplash.com/photo-1597084945126-11df14187d08?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Z2xvYmFsJTIwd2FybWluZ3xlbnwwfDB8MHx8fDA%3D",
       tags: ["Climate Change", "Oceans", "Marine Life"]
     },
     {
@@ -280,7 +280,7 @@ export const newsArticles = [
       brief: "As remote work becomes the norm, companies are rethinking the role of physical office spaces.",
       content: "The COVID-19 pandemic has accelerated the trend of remote work, leading many companies to reconsider the need for traditional office spaces. With benefits such as cost savings, increased productivity, and a broader talent pool, remote work is becoming a permanent fixture for many businesses. However, it also presents challenges in terms of collaboration and employee engagement.",
       publishedDate: "2024-08-30T13:55:00Z",
-      imageUrl: "https://example.com/remote_work.jpg",
+      imageUrl: "https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       tags: ["Remote Work", "Workplace", "Business Trends"]
     },
     {
@@ -291,7 +291,7 @@ export const newsArticles = [
       brief: "Quantum computing has reached a new milestone, promising to revolutionize fields such as cryptography and material science.",
       content: "Scientists have achieved a major breakthrough in quantum computing, demonstrating a prototype that can solve complex problems much faster than traditional computers. This development is expected to have profound implications for industries ranging from finance to pharmaceuticals, where vast computational power is required.",
       publishedDate: "2024-09-01T11:20:00Z",
-      imageUrl: "https://example.com/quantum_computing.jpg",
+      imageUrl: "https://plus.unsplash.com/premium_photo-1690297733164-958ea1f806ab?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cXVhbnR1bSUyMGNvbXB1dGluZ3xlbnwwfDB8MHx8fDA%3D",
       tags: ["Quantum Computing", "Technology", "Innovation"]
     },
     {
@@ -302,7 +302,7 @@ export const newsArticles = [
       brief: "California faces one of its worst wildfire seasons as record temperatures and drought conditions persist.",
       content: "A severe heatwave coupled with prolonged drought has triggered a series of wildfires across California, destroying thousands of homes and displacing residents. Firefighters are battling around the clock to contain the blazes, but strong winds and dry conditions continue to fuel the fires.",
       publishedDate: "2024-09-02T15:30:00Z",
-      imageUrl: "https://example.com/california_wildfires.jpg",
+      imageUrl: "https://plus.unsplash.com/premium_photo-1688431299032-b9c6700d074b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d2lsZGZpcmVzfGVufDB8MHwwfHx8MA%3D%3D",
       tags: ["Wildfires", "Climate Change", "California"]
     },
     {
@@ -313,7 +313,7 @@ export const newsArticles = [
       brief: "NASA and private companies are gearing up for missions to Mars, with plans for human colonization within the next decade.",
       content: "Mars has long been the target of space exploration, and recent technological advances have brought human colonization closer to reality. NASA, along with private companies like SpaceX, is developing the infrastructure needed to support human life on the Red Planet, including habitat construction, water extraction, and sustainable energy sources.",
       publishedDate: "2024-09-03T08:45:00Z",
-      imageUrl: "https://example.com/mars_colonization.jpg",
+      imageUrl: "https://images.unsplash.com/photo-1573588028698-f4759befb09a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFyc3xlbnwwfDB8MHx8fDA%3D",
       tags: ["Space Exploration", "Mars", "NASA"]
     },
     {
@@ -324,7 +324,7 @@ export const newsArticles = [
       brief: "Small businesses are playing a critical role in driving economic recovery post-pandemic.",
       content: "As economies around the world recover from the pandemic, small businesses have emerged as a key driver of growth. Governments are providing support through grants and loans, while communities rally to support local entrepreneurs. These efforts are helping to create jobs, stimulate local economies, and build resilience against future shocks.",
       publishedDate: "2024-09-04T10:00:00Z",
-      imageUrl: "https://example.com/small_business.jpg",
+      imageUrl: "https://images.unsplash.com/photo-1575663620136-5ebbfcc2c597?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c21hbGwlMjBidXNpbmVzc3xlbnwwfDB8MHx8fDA%3D",
       tags: ["Small Business", "Economic Recovery", "Entrepreneurship"]
     },
     {
@@ -335,7 +335,7 @@ export const newsArticles = [
       brief: "Researchers have developed a new drug that shows promise in slowing the progression of Alzheimer’s disease.",
       content: "In a groundbreaking development, scientists have created a drug that may slow the cognitive decline associated with Alzheimer’s disease. Early trials have shown that the drug can reduce the buildup of amyloid plaques in the brain, which are thought to contribute to the disease's progression. Further studies are needed to confirm its efficacy and safety.",
       publishedDate: "2024-09-05T12:10:00Z",
-      imageUrl: "https://example.com/alzheimers_research.jpg",
+      imageUrl: "https://plus.unsplash.com/premium_photo-1665203566081-9509a95b4e57?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YWx6aGVpbWVyJ3MlMjBkaXNlYXNlfGVufDB8MHwwfHx8MA%3D%3D",
       tags: ["Alzheimer's", "Medical Research", "Health"]
     },
     {
@@ -346,7 +346,7 @@ export const newsArticles = [
       brief: "Virtual reality is transforming classrooms, offering immersive learning experiences.",
       content: "Virtual reality (VR) technology is rapidly entering the education sector, offering students immersive experiences that enhance learning. From virtual field trips to 3D anatomy lessons, VR is helping to engage students in ways traditional methods cannot, potentially revolutionizing how education is delivered in the future.",
       publishedDate: "2024-09-06T09:30:00Z",
-      imageUrl: "https://example.com/vr_education.jpg",
+      imageUrl: "https://plus.unsplash.com/premium_photo-1663091704223-cc051e0f0c47?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dnJ8ZW58MHwwfDB8fHww",
       tags: ["Virtual Reality", "Education", "Technology"]
     },
     {
@@ -357,7 +357,7 @@ export const newsArticles = [
       brief: "Renewable energy sources are becoming more efficient and affordable, leading the way to a sustainable future.",
       content: "Recent advances in renewable energy technologies, such as solar and wind power, have made them more efficient and cost-effective. As a result, countries are increasingly investing in green energy to reduce their carbon footprint and combat climate change. These innovations are crucial for achieving a sustainable future.",
       publishedDate: "2024-09-07T07:55:00Z",
-      imageUrl: "https://example.com/renewable_energy.jpg",
+      imageUrl: "https://images.unsplash.com/photo-1417144527634-653e3dec77b2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHJlbmV3YWJsZSUyMGVuZXJneXxlbnwwfDB8MHx8fDA%3D",
       tags: ["Renewable Energy", "Sustainability", "Climate Change"]
     },
     {
@@ -368,7 +368,7 @@ export const newsArticles = [
       brief: "Experts highlight the rising mental health crisis among teenagers and suggest solutions to address it.",
       content: "The mental health of teenagers is a growing concern, with rising rates of anxiety, depression, and suicide. Experts point to factors such as social media, academic pressure, and lack of access to mental health services. To address this crisis, there is a need for more mental health education, accessible services, and supportive environments for young people.",
       publishedDate: "2024-09-08T11:25:00Z",
-      imageUrl: "https://example.com/mental_health_teens.jpg",
+      imageUrl: "https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bWVudGFsJTIwaGVhbHRofGVufDB8MHwwfHx8MA%3D%3D",
       tags: ["Mental Health", "Teenagers", "Healthcare"]
     },
     {
@@ -379,7 +379,7 @@ export const newsArticles = [
       brief: "Consumers are increasingly demanding ethical fashion, driving brands to adopt sustainable practices.",
       content: "The fashion industry is undergoing a transformation as more consumers prioritize ethical and sustainable practices. From organic fabrics to fair trade production, brands are responding to the demand for clothing that is both stylish and responsible. This shift is not only better for the planet but also enhances brand loyalty and reputation.",
       publishedDate: "2024-09-09T14:40:00Z",
-      imageUrl: "https://example.com/ethical_fashion.jpg",
+      imageUrl: "https://images.unsplash.com/photo-1511511450040-677116ff389e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGV0aGljYWwlMjBmYXNoaW9ufGVufDB8MHwwfHx8MA%3D%3D",
       tags: ["Ethical Fashion", "Sustainability", "Consumer Trends"]
     },
     {
@@ -390,7 +390,7 @@ export const newsArticles = [
       brief: "Social media platforms have become essential tools for political campaigns, but not without controversy.",
       content: "In recent years, social media has transformed political campaigns, providing a platform for candidates to reach voters directly and mobilize supporters. However, it also raises concerns about misinformation, privacy, and foreign interference. As elections approach, the role of social media in politics continues to evolve, prompting calls for greater regulation.",
       publishedDate: "2024-09-10T09:15:00Z",
-      imageUrl: "https://example.com/social_media_politics.jpg",
+      imageUrl: "https://images.unsplash.com/photo-1504270997636-07ddfbd48945?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fHNvY2lhbCUyMG1lZGlhfGVufDB8MHwwfHx8MA%3D%3D",
       tags: ["Social Media", "Politics", "Elections"]
     },
     {
@@ -401,7 +401,7 @@ export const newsArticles = [
       brief: "Scientists embark on new expeditions to uncover the mysteries of the deep sea.",
       content: "The deep sea remains one of the least explored regions of our planet. Recent expeditions have discovered new species and uncovered insights into the unique ecosystems that thrive in the ocean's depths. With advanced technology, scientists continue to push the boundaries of deep-sea exploration, revealing the wonders that lie beneath.",
       publishedDate: "2024-09-11T08:50:00Z",
-      imageUrl: "https://example.com/deep_sea_exploration.jpg",
+      imageUrl: "https://unsplash.com/photos/blue-and-white-ocean-1Rd4FCGVmdE",
       tags: ["Deep Sea", "Marine Biology", "Exploration"]
     },
     {
@@ -412,7 +412,7 @@ export const newsArticles = [
       brief: "As cryptocurrencies become more mainstream, governments and institutions grapple with regulation and adoption.",
       content: "Cryptocurrencies are gaining wider acceptance, with more businesses and consumers using digital currencies for transactions. However, this growth is accompanied by calls for regulation to address concerns about security, fraud, and market volatility. As the industry evolves, the balance between innovation and regulation will shape the future of cryptocurrency.",
       publishedDate: "2024-09-12T10:05:00Z",
-      imageUrl: "https://example.com/cryptocurrency_future.jpg",
+      imageUrl: "https://images.unsplash.com/photo-1640161704729-cbe966a08476?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y3J5cHRvY3VycmVuY3l8ZW58MHwwfDB8fHww",
       tags: ["Cryptocurrency", "Finance", "Regulation"]
     },
     {
@@ -423,7 +423,7 @@ export const newsArticles = [
       brief: "AI is transforming workplaces, enhancing productivity, and creating new job opportunities.",
       content: "Artificial intelligence is reshaping the modern workplace, automating routine tasks and enabling data-driven decision-making. While some fear job displacement, AI is also creating new opportunities in fields such as data science, machine learning, and cybersecurity. The key to success will be adapting to these changes and investing in skills development.",
       publishedDate: "2024-09-13T11:35:00Z",
-      imageUrl: "https://example.com/ai_future_work.jpg",
+      imageUrl: "https://images.unsplash.com/photo-1712002641088-9d76f9080889?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGFpfGVufDB8MHwwfHx8MA%3D%3D",
       tags: ["Artificial Intelligence", "Workplace", "Future"]
     },
     {
@@ -434,7 +434,7 @@ export const newsArticles = [
       brief: "Electric bikes are becoming a popular alternative for urban commuting, offering a green and efficient solution.",
       content: "As cities grow more congested, electric bikes (e-bikes) are emerging as a viable alternative for urban commuting. E-bikes offer a cost-effective, eco-friendly mode of transport that is accessible to people of all ages and fitness levels. With advancements in battery technology, e-bikes are becoming lighter, more powerful, and capable of longer distances.",
       publishedDate: "2024-09-14T13:20:00Z",
-      imageUrl: "https://example.com/electric_bikes.jpg",
+      imageUrl: "https://images.unsplash.com/photo-1649878938553-1eaac5c27375?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZWxlY3RyaWMlMjBiaWtlfGVufDB8MHwwfHx8MA%3D%3D",
       tags: ["Electric Bikes", "Urban Mobility", "Green Technology"]
     },
     {
@@ -445,7 +445,7 @@ export const newsArticles = [
       brief: "Understanding consumer behavior is key to developing effective marketing strategies.",
       content: "Consumer behavior is influenced by a complex interplay of psychological, social, and economic factors. By understanding these drivers, businesses can develop more effective marketing strategies that resonate with their target audiences. Recent studies highlight the importance of personalization, emotional appeal, and ethical considerations in influencing purchasing decisions.",
       publishedDate: "2024-09-15T09:40:00Z",
-      imageUrl: "https://example.com/consumer_behavior.jpg",
+      imageUrl: "https://images.unsplash.com/photo-1541973091767-2abb0d55ba51?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y29uc3VtZXIlMjBiZWhhdmlvdXJ8ZW58MHwwfDB8fHww",
       tags: ["Consumer Behavior", "Marketing", "Business Strategy"]
     },
     {
@@ -456,7 +456,7 @@ export const newsArticles = [
       brief: "Climate change is disrupting agricultural patterns and threatening global food security.",
       content: "Rising temperatures, unpredictable weather patterns, and natural disasters are having a profound impact on global agriculture. These changes threaten food production, disrupt supply chains, and increase the risk of food shortages. To address these challenges, experts are calling for greater investment in sustainable farming practices, climate-resilient crops, and international cooperation.",
       publishedDate: "2024-09-16T12:55:00Z",
-      imageUrl: "https://example.com/food_security_climate_change.jpg",
+      imageUrl: "https://images.unsplash.com/photo-1615092296061-e2ccfeb2f3d6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fGNsaW1hdGUlMjBjaGFuZ2V8ZW58MHwwfDB8fHww",
       tags: ["Climate Change", "Agriculture", "Food Security"]
     }
   ];

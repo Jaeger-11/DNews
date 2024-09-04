@@ -38,5 +38,5 @@ export interface comment{
 
 export interface content{
     category: string;
-    search: string;
+    param: string;
 }

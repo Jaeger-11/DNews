@@ -5,33 +5,60 @@ import { fetchArticles } from "@/utils";
 import HorizontalAds from "./HorizontalAds";
 import Header from "./Header";
 import Article from "./Article";
-import { useAppSelector } from "@/lib/hooks";
+import { useAppDispatch, useAppSelector } from "@/lib/hooks";
+import { useEffect, useState } from "react";
+import { setCategory } from "@/lib/features/contentSlice";
 
 const Articles = () => {
-    const { category } = useAppSelector((state) => state.content);
+    const dispatch = useAppDispatch();
+    const { category, param } = useAppSelector((state) => state.content);
+    const [articles, setArticles] = useState<article[]>(newsArticles);
     // const data = await fetchArticles();
     // console.log(data)
-    let data:article[] = []
+    // let data:article[] = newsArticles;
     const filterByCategory = () => {
         if(category.toLowerCase() === 'latest news'){
-            data = newsArticles;
+            setArticles(newsArticles)
         } else {
+            let data:article[] = []
             newsArticles.map((item) => {
                 if(item.category.toLowerCase() === category.toLowerCase()){
                     data.push(item)
                 }
             })
+            setArticles(data);
         }
     }
-    filterByCategory();
+
+    const searchArticles = () => {
+        let data:article[] = []
+        newsArticles.map((item) => {
+            if(item.title.toLowerCase().includes(param)){
+                data.push(item);
+            }
+        })
+        setArticles(data);
+        if(param.length > 0){
+            dispatch(setCategory({category:'Top Matches'}))
+        }
+    }
+
+    useEffect(() => {
+        searchArticles();
+    }, [param])
+
+    useEffect(() => {
+        filterByCategory();
+    },[category])
+
   return (
     <section className="">
         <Header/>
         <main className="grid grid-cols-1 pb-10">
-            {data.length > 0 ? data.map((item:article) => {
+            {articles.length > 0 ? articles.map((item:article) => {
                 // const { title, id, body } = item
                 return (
-                    <Article {...item} />
+                    <Article {...item} key={item.id}/>
                 )
             }) : 
             <h3 className="font-semibold p-2 mt-4">
