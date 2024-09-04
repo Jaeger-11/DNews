@@ -1,43 +1,43 @@
+"use client";
 import { newsArticles } from "@/data"
 import { apiArticle, article } from "@/interface";
-import Image from "next/image";
-import Link from "next/link";
-import { formatDate } from "@/utils";
 import { fetchArticles } from "@/utils";
 import HorizontalAds from "./HorizontalAds";
 import Header from "./Header";
+import Article from "./Article";
+import { useAppSelector } from "@/lib/hooks";
 
-const Articles = async () => {
+const Articles = () => {
+    const { category } = useAppSelector((state) => state.content);
     // const data = await fetchArticles();
     // console.log(data)
+    let data:article[] = []
+    const filterByCategory = () => {
+        if(category.toLowerCase() === 'latest news'){
+            data = newsArticles;
+        } else {
+            newsArticles.map((item) => {
+                if(item.category.toLowerCase() === category.toLowerCase()){
+                    data.push(item)
+                }
+            })
+        }
+    }
+    filterByCategory();
   return (
     <section className="">
         <Header/>
         <main className="grid grid-cols-1 pb-10">
-            {newsArticles.map((item:article) => {
+            {data.length > 0 ? data.map((item:article) => {
                 // const { title, id, body } = item
-                const {title, brief,id, imageUrl, publishedDate, author, category} = item;
                 return (
-                    <Link href={`/article/${id}`} key={id} className="cursor-pointer block p-2 border-b border-secondary text-dark hover:bg-secondary transition-colors">
-                        <div className="grid grid-cols-3 gap-2 hover:text-accent">
-                            <h3 className="text-xl leading-tight font-medium font-primary capitalize">{title}</h3>
-                            <p className="text-sm leading-tight">{brief}</p>
-                            <Image 
-                            width={200}
-                            height={200}
-                            src={imageUrl}
-                            alt={title}
-                            className="aspect-video object-cover object-center"
-                            />
-                        </div>
-                        <div className="capitalize grid grid-cols-3 gap-2 text-sm mt-2">
-                            <p className="font-semibold">{author}</p>
-                            <p>{category}</p>
-                            <p className="text-primary">{formatDate(publishedDate)}</p>
-                        </div>
-                    </Link>
+                    <Article {...item} />
                 )
-            })}
+            }) : 
+            <h3 className="font-semibold p-2 mt-4">
+                No News in this category yet! <span className="text-accent underline italic"> View Latest News </span>
+            </h3>
+            }
         </main>
         <HorizontalAds/>
     </section>

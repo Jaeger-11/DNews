@@ -1,6 +1,5 @@
 // NEWS CATEGORIES
 export const newsCategories = [
-  "Top Stories",
   "Latest News",
   "World",
   "Politics",
