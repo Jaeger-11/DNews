@@ -49,7 +49,7 @@ const TrendingSlide = () => {
                             <section className='flex flex-col gap-2'>
                                 <p className='text-primary font-medium bg-secondary p-1 px-2 w-max rounded-sm'>{article.category}</p>
                                 <h3 className='text-2xl text-accent font-semibold font-primary'>{article.title}</h3>
-                                <p className='text-base'>{article.briefDescription}</p>
+                                <p className='text-base'>{article.brief}</p>
                             </section>
                         </Link>
                     </SplideSlide>

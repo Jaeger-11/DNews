@@ -1,7 +1,7 @@
 export interface article{
     id: number
     title: string;
-    briefDescription: string;
+    brief: string;
     content: string;
     author: string;
     publishedDate: string;
@@ -34,4 +34,9 @@ export interface comment{
     username: string;
     timestamp: string;
     comment: string;
+}
+
+export interface content{
+    category: string;
+    search: string;
 }

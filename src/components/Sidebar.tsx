@@ -6,29 +6,15 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "@/database/config";
 import { useAppDispatch } from "@/lib/hooks";
 import { setUser, logOut } from "@/lib/features/userSlice";
+import { setCategory, setSearch } from "@/lib/features/contentSlice";
+import { newsCategories } from "@/data";
+import { useState } from "react";
 
 const Sidebar:React.FC = () => {
     const dispatch = useAppDispatch();
-    const { username, uid } = useAppSelector((state) => state.user )
-    console.log(username)
-    const newsCategories = [
-        "Top Stories",
-        "Latest News",
-        "World",
-        "Politics",
-        "Business",
-        "Technology",
-        "Science",
-        "Health",
-        "Entertainment",
-        "Sports",
-        "Lifestyle",
-        "Education",
-        "Opinion",
-        "Local News",
-        "Weather",
-        "Crime & Justice"
-    ];
+    const { username, uid } = useAppSelector((state) => state.user );
+    const { category } = useAppSelector((state) => state.content)
+    const [ selectedCategory, setSelectedCategory ] = useState<string>('Latest News')
     
     onAuthStateChanged(auth, (user) => {
         if(user){
@@ -53,8 +39,12 @@ const Sidebar:React.FC = () => {
         });
     }
 
+    const selectCategory = (cat:string) => {
+        setSelectedCategory(cat);
+        dispatch(setCategory({category:cat}));
+    }
+
   return (
-    // Work on category scroll overflow
     <aside className="h-svh min-h-max p-4 flex flex-col w-max justify-between border-r">
         <Logo style=""/>
         {
@@ -78,8 +68,8 @@ const Sidebar:React.FC = () => {
                 <p className="font-semibold text-primary mb-2">Categories</p>
                 <ul className="flex flex-col gap-1 text-sm h-[50svh] overflow-y-scroll pb-6 pl-1">
                 {
-                    newsCategories.map((category) => {
-                        return <li key={category} className="capitalize w-max cursor-pointer text-primary hover:text-accent hover:scale-105 hover:font-medium transition-all">{category}</li>
+                    newsCategories.map((newsCategory) => {
+                        return <li onClick={() => selectCategory(newsCategory)} key={newsCategory} className={` ${selectedCategory.toLowerCase() === newsCategory.toLowerCase() ? ' text-accent ' : 'text-primary'} capitalize w-max cursor-pointer hover:text-accent hover:scale-105 hover:font-medium transition-all`}>{newsCategory}</li>
                     })
                 }
                 </ul>
