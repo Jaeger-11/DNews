@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Lato } from "next/font/google";
 import "./globals.css";
-import Sidebar from "@/components/Sidebar";
-import HorizontalAds from "@/components/HorizontalAds";
-import Aside from "@/components/Aside";
-import Footer from "@/components/Footer";
+import StoreProvider from "./storeProvider";
 
 const playfairDisplay = Playfair_Display({
   subsets:['latin'],
@@ -30,7 +27,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfairDisplay.variable} ${lato.variable}`}>
       <body className="font-secondary flex">
-        {children}
+        <StoreProvider>
+          {children}
+        </StoreProvider>
       </body>
     </html>
   );

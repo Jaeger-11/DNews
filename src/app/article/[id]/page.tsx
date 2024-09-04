@@ -1,11 +1,25 @@
-import { newsArticles } from "@/data";
+import { newsArticles, articleComments } from "@/data";
 import Image from "next/image";
 import { formatDate } from "@/utils";
 import Back from "@/components/Back";
 import Layout from "@/components/Layout";
+import Comment from "@/components/Comment";
+import { comment } from "@/interface";
 
 const page = ({params}: {params: {id:string}}) => {
-  const article  = newsArticles.find((item) => item.id.toString() === params.id)
+  const article  = newsArticles.find((item) => item.id.toString() === params.id);
+  let comments:comment[] = []
+  // const comments = articleComments.find((item) => item.articleId.toString() === params.id);
+  const fetchComments = () => {
+    articleComments.map((item) => {
+      if(item.articleId.toString() === params.id){
+        comments.push(item);
+      }
+    })
+  }
+
+  fetchComments();
+  
   return (
     <Layout>
       {article ? 
@@ -44,9 +58,19 @@ const page = ({params}: {params: {id:string}}) => {
           <div className="w-2/3 p-2 border rounded-md">
             <input type="text" name="" id="" placeholder="Add your opinion / comment"  className="w-full border-none placeholder:text-base text-primary outline-none bg-transparent"/>
           </div>
+
+          <section className="my-2 border-t">
+            { comments.length > 0 ?
+              comments.map((item:comment) => {
+                return <Comment{...item} key={item.id}/>
+              }) : 
+              <h3 className="font-semibold capitalize mt-4">No Comments yet, be the first!</h3>
+            }
+          </section>
         </section>
       </article>
-      : undefined}
+      : undefined
+    }
     </Layout>
   )
 }

@@ -1,7 +1,16 @@
+"use client"
 import Link from "next/link";
 import Logo from "./Logo";
-const Sidebar:React.FC = () => {
+import { useAppSelector } from "@/lib/hooks";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { auth } from "@/database/config";
+import { useAppDispatch } from "@/lib/hooks";
+import { setUser, logOut } from "@/lib/features/userSlice";
 
+const Sidebar:React.FC = () => {
+    const dispatch = useAppDispatch();
+    const { username, uid } = useAppSelector((state) => state.user )
+    console.log(username)
     const newsCategories = [
         "Top Stories",
         "Latest News",
@@ -19,13 +28,45 @@ const Sidebar:React.FC = () => {
         "Local News",
         "Weather",
         "Crime & Justice"
-      ];
+    ];
+    
+    onAuthStateChanged(auth, (user) => {
+        if(user){
+            let userInfo = {email: user.email, username: user.displayName, uid: user.uid}
+            dispatch(setUser(userInfo))
+        } else {
+            dispatch(logOut())
+        }
+    })
+
+    const handleLogOut = () => {
+        signOut(auth).then(() => {
+            // Sign-out successful.
+            dispatch(logOut())
+            // dispatch(updateNotification({text:"User Successfully Signed Out!", imageUrl: 'show'}))
+            // setTimeout(() => {
+            //     dispatch(closeNotification())
+            // }, 2000);
+        }).catch((error) => {
+        // An error happened.
+        console.log(error)
+        });
+    }
 
   return (
     // Work on category scroll overflow
     <aside className="h-svh min-h-max p-4 flex flex-col w-max justify-between border-r">
         <Logo style=""/>
-        <Link href='/authenticate' className="text-sm underline cursor-pointer hover:text-accent transition-colors">Login / Signup</Link>
+        {
+            uid ? 
+            <div className="flex gap-1 items-center ">
+                <svg className="size-4" fill="#1D3557" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#1D3557"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M12,1a11,11,0,0,0,0,22,1,1,0,0,0,0-2,9,9,0,1,1,9-9v2.857a1.857,1.857,0,0,1-3.714,0V7.714a1,1,0,1,0-2,0v.179A5.234,5.234,0,0,0,12,6.714a5.286,5.286,0,1,0,3.465,9.245A3.847,3.847,0,0,0,23,14.857V12A11.013,11.013,0,0,0,12,1Zm0,14.286A3.286,3.286,0,1,1,15.286,12,3.29,3.29,0,0,1,12,15.286Z"></path></g></svg>
+                <p className="text-sm font-bold capitalize">{username}</p>
+            </div>
+            :
+            <Link href='/authenticate' className="text-sm underline cursor-pointer hover:text-accent transition-colors">Login / Signup</Link>
+        }
+
         <section>
             {/* Search  */}
             <div className="border-b mb-4 border-primary pb-1 bg-transparent flex gap-2 items-center w-max">
@@ -45,7 +86,10 @@ const Sidebar:React.FC = () => {
             </div>
         </section>
         <div>
-
+        {
+            uid && 
+            <p onClick={handleLogOut} className="text-sm text-red-500 font-semibold cursor-pointer"> Log Out </p>
+        }
         </div>
     </aside>
   )

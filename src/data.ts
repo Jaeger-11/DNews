@@ -221,3 +221,145 @@ export const newsArticles = [
     }
   ];
   
+export const articleComments = [
+  {
+    id: 1,
+    articleId: 15,
+    username: "Michael Smith",
+    timestamp: "2024-08-30T10:15:00Z",
+    comment: "Great article! Really enjoyed the insights on the topic."
+  },
+  {
+    id: 2,
+    articleId: 8,
+    username: "Sarah Johnson",
+    timestamp: "2024-08-29T14:32:00Z",
+    comment: "I disagree with some points, but overall it's a good read."
+  },
+  {
+    id: 3,
+    articleId: 12,
+    username: "David Brown",
+    timestamp: "2024-08-28T09:05:00Z",
+    comment: "Interesting perspective, but I think the analysis could be deeper."
+  },
+  {
+    id: 4,
+    articleId: 3,
+    username: "Laura Williams",
+    timestamp: "2024-08-27T18:45:00Z",
+    comment: "The environmental impact section was eye-opening. Thanks for sharing!"
+  },
+  {
+    id: 5,
+    articleId: 19,
+    username: "James Jones",
+    timestamp: "2024-08-27T12:30:00Z",
+    comment: "Loved this article! Makes me want to explore new places even more."
+  },
+  {
+    id: 6,
+    articleId: 7,
+    username: "Patricia Miller",
+    timestamp: "2024-08-26T15:22:00Z",
+    comment: "A well-written piece with a lot of historical context. Kudos to the author!"
+  },
+  {
+    id: 7,
+    articleId: 4,
+    username: "Robert Garcia",
+    timestamp: "2024-08-25T11:50:00Z",
+    comment: "Would love to see more articles about local cuisines and their origins!"
+  },
+  {
+    id: 8,
+    articleId: 9,
+    username: "Linda Martinez",
+    timestamp: "2024-08-24T08:14:00Z",
+    comment: "Great breakdown of the latest match! Looking forward to more updates."
+  },
+  {
+    id: 9,
+    articleId: 4,
+    username: "William Rodriguez",
+    timestamp: "2024-08-23T19:00:00Z",
+    comment: "The article missed some critical points about the movie. Could use a deeper dive."
+  },
+  {
+    id: 10,
+    articleId: 11,
+    username: "Elizabeth Davis",
+    timestamp: "2024-08-22T13:42:00Z",
+    comment: "Would love to hear more about the latest advancements in AI. Great article!"
+  },
+  {
+    id: 11,
+    articleId: 1,
+    username: "Thomas Martinez",
+    timestamp: "2024-08-21T16:10:00Z",
+    comment: "A balanced view on a very complex subject. Appreciate the fair analysis."
+  },
+  {
+    id: 12,
+    articleId: 1,
+    username: "Barbara Lewis",
+    timestamp: "2024-08-20T09:55:00Z",
+    comment: "Fantastic article! Really well-explained for a non-expert audience."
+  },
+  {
+    id: 13,
+    articleId: 5,
+    username: "Christopher Lee",
+    timestamp: "2024-08-19T20:30:00Z",
+    comment: "Loved the tips on maintaining a healthy lifestyle. Keep them coming!"
+  },
+  {
+    id: 14,
+    articleId: 13,
+    username: "Susan Clark",
+    timestamp: "2024-08-18T11:00:00Z",
+    comment: "This is why I follow this site! Great reporting as always."
+  },
+  {
+    id: 15,
+    articleId: 6,
+    username: "Paul Young",
+    timestamp: "2024-08-17T14:44:00Z",
+    comment: "I totally agree with your take on the new album release!"
+  },
+  {
+    id: 16,
+    articleId: 17,
+    username: "Emily King",
+    timestamp: "2024-08-16T17:15:00Z",
+    comment: "The book recommendations were fantastic. Already added to my list!"
+  },
+  {
+    id: 17,
+    articleId: 2,
+    username: "Daniel Wright",
+    timestamp: "2024-08-15T10:25:00Z",
+    comment: "Would love to see more content on urban culture and events!"
+  },
+  {
+    id: 18,
+    articleId: 18,
+    username: "Jessica Hall",
+    timestamp: "2024-08-14T09:35:00Z",
+    comment: "Nice breakdown of the latest crypto trends. Keep it up!"
+  },
+  {
+    id: 19,
+    articleId: 10,
+    username: "Charles Green",
+    timestamp: "2024-08-13T13:05:00Z",
+    comment: "Glad to see environmental issues being highlighted more often."
+  },
+  {
+    id: 20,
+    articleId: 20,
+    username: "Nancy Adams",
+    timestamp: "2024-08-12T08:55:00Z",
+    comment: "Fantastic insights on global travel trends. Made me want to pack my bags!"
+  }
+];
