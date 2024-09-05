@@ -1,4 +1,3 @@
-import { newsArticles, articleComments } from "@/data";
 import Image from "next/image";
 import { fetchArticle, fetchComments } from "@/utils";
 import Back from "@/components/Back";

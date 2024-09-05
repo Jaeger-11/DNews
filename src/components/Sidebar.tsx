@@ -9,8 +9,10 @@ import { setUser, logOut } from "@/lib/features/userSlice";
 import { setCategory, setSearch } from "@/lib/features/contentSlice";
 import { newsCategories } from "@/data";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const Sidebar:React.FC = () => {
+    const router = useRouter();
     const dispatch = useAppDispatch();
     const { username, uid } = useAppSelector((state) => state.user );
     const { param, category } = useAppSelector((state) => state.content)
@@ -37,11 +39,13 @@ const Sidebar:React.FC = () => {
     }
 
     const selectCategory = (cat:string) => {
+        router.push('/')
         setSelectedCategory(cat);
         dispatch(setCategory({category:cat}));
     }
 
     const handleSearch = ({target}:React.ChangeEvent<HTMLInputElement>) => {
+        router.push('/')
         it = target.value
         dispatch(setSearch({text:it}));
     }
