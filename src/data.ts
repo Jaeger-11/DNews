@@ -401,7 +401,7 @@ export const newsArticles = [
       brief: "Scientists embark on new expeditions to uncover the mysteries of the deep sea.",
       content: "The deep sea remains one of the least explored regions of our planet. Recent expeditions have discovered new species and uncovered insights into the unique ecosystems that thrive in the ocean's depths. With advanced technology, scientists continue to push the boundaries of deep-sea exploration, revealing the wonders that lie beneath.",
       publishedDate: "2024-09-11T08:50:00Z",
-      imageUrl: "https://unsplash.com/photos/blue-and-white-ocean-1Rd4FCGVmdE",
+      imageUrl: "https://images.unsplash.com/photo-1415728008300-c072035020ec?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGVlcCUyMHNlYXxlbnwwfDB8MHx8fDA%3D",
       tags: ["Deep Sea", "Marine Biology", "Exploration"]
     },
     {

@@ -13,9 +13,7 @@ const Articles = () => {
     const dispatch = useAppDispatch();
     const { category, param } = useAppSelector((state) => state.content);
     const [articles, setArticles] = useState<article[]>(newsArticles);
-    // const data = await fetchArticles();
-    // console.log(data)
-    // let data:article[] = newsArticles;
+    
     const filterByCategory = () => {
         if(category.toLowerCase() === 'latest news'){
             setArticles(newsArticles)

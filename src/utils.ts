@@ -41,3 +41,13 @@ export const fetchArticles = async () => {
     const { data } = await useAxios('/posts')
     return data;
 }
+
+export const fetchArticle = async (id:string) => {
+    const { data } = await useAxios(`/posts/${id}`)
+    return data
+}
+
+export const fetchComments = async (id:string) => {
+    const { data } = await useAxios(`/posts/${id}/comments`);
+    return data
+}
