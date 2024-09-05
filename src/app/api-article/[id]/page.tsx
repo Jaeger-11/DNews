@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { fetchArticle, fetchComments } from "@/utils";
+import { FetchArticle, FetchComments } from "@/utils";
 import Back from "@/components/Back";
 import Layout from "@/components/Layout";
 import { apiArticle } from "@/interface";
@@ -7,8 +7,8 @@ import InputComment from "@/components/InputComment";
 import ApiComment from "@/components/ApiComment";
 
 const page = async ({params}: {params: {id:string}}) => {
-    const article:apiArticle = await fetchArticle(params.id);
-    const comments = await fetchComments(params.id)
+    const article:apiArticle = await FetchArticle(params.id);
+    const comments = await FetchComments(params.id)
     // console.log(article, params.id)
   
   return (

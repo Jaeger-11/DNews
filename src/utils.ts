@@ -37,17 +37,17 @@ export const shuffleArticle = (list:article[]) => {
     return updatedList.slice(0,4)
 }
 
-export const fetchArticles = async () => {
+export const FetchArticles = async () => {
     const { data } = await useAxios('/posts')
     return data;
 }
 
-export const fetchArticle = async (id:string) => {
+export const FetchArticle = async (id:string) => {
     const { data } = await useAxios(`/posts/${id}`)
     return data
 }
 
-export const fetchComments = async (id:string) => {
+export const FetchComments = async (id:string) => {
     const { data } = await useAxios(`/posts/${id}/comments`);
     return data
 }

@@ -1,7 +1,7 @@
 "use client";
 import { newsArticles } from "@/data"
 import { apiArticle, article } from "@/interface";
-import { fetchArticles } from "@/utils";
+import { FetchArticles } from "@/utils";
 import HorizontalAds from "./HorizontalAds";
 import Header from "./Header";
 import Article from "./Article";

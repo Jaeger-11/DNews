@@ -11,7 +11,7 @@ const page = ({params}: {params: {id:string}}) => {
   const article  = newsArticles.find((item) => item.id.toString() === params.id);
   let comments:comment[] = []
   
-  const fetchComments = () => {
+  const FetchComments = () => {
     articleComments.map((item) => {
       if(item.articleId.toString() === params.id){
         comments.push(item);
@@ -19,7 +19,7 @@ const page = ({params}: {params: {id:string}}) => {
     })
   }
 
-  fetchComments();
+  FetchComments();
   
   return (
     <Layout>
