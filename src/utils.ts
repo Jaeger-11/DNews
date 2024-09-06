@@ -37,6 +37,12 @@ export const shuffleArticle = (list:article[]) => {
     return updatedList.slice(0,4)
 }
 
+export const initials = (username:string) => {
+    let splitted = username.split(' ');
+    let letters = `${splitted[0][0]}${splitted[1][0]}`
+    return letters
+}
+
 export const FetchArticles = async () => {
     const { data } = await useAxios('/posts')
     return data;

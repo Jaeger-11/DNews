@@ -4,12 +4,12 @@ import Back from "@/components/Back";
 import Layout from "@/components/Layout";
 import { apiArticle } from "@/interface";
 import InputComment from "@/components/InputComment";
-import ApiComment from "@/components/ApiComment";
+import ApiComment from "@/components/ApiComment"; 
+import FirebaseComments from "@/components/FirebaseComments";
 
 const page = async ({params}: {params: {id:string}}) => {
     const article:apiArticle = await FetchArticle(params.id);
     const comments = await FetchComments(params.id)
-    // console.log(article, params.id)
   
   return (
     <Layout>
@@ -46,7 +46,7 @@ const page = async ({params}: {params: {id:string}}) => {
         <section>
           {/* COMMENTS */}
           <h2 className="text-xl font-primary uppercase font-semibold text-primary mb-2">Comments</h2>
-          <InputComment/>
+          <InputComment id={params.id}/>
 
           <section className="my-2 border-t">
             { comments.length > 0 ?
@@ -55,6 +55,7 @@ const page = async ({params}: {params: {id:string}}) => {
               }) : 
               <h3 className="font-semibold capitalize mt-4">No Comments yet, be the first!</h3>
             }
+            <FirebaseComments id={`${params.id}`}/>
           </section>
         </section>
       </article>

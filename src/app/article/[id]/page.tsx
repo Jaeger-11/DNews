@@ -56,7 +56,7 @@ const page = ({params}: {params: {id:string}}) => {
         <section>
           {/* COMMENTS */}
           <h2 className="text-xl font-primary uppercase font-semibold text-primary mb-2">Comments</h2>
-          <InputComment/>
+          <InputComment id={params.id}/>
 
           <section className="my-2 border-t">
             { comments.length > 0 ?
