@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '@/components/Layout'
 import HorizontalAds from '@/components/HorizontalAds'
+import ContactForm from '@/components/ContactForm'
 
 const page = () => {
   return (
@@ -51,6 +52,7 @@ const page = () => {
             <span className='font-medium'> Sign up for our daily newsletter to receive top headlines, trending stories, and exclusive content directly in your inbox!</span>
           </ul>
         </section>
+        <ContactForm/>
       </div>
       <HorizontalAds/>
     </Layout>

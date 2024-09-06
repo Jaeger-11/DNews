@@ -40,3 +40,10 @@ export interface content{
     category: string;
     param: string;
 }
+
+export interface contact{
+    firstName: string;
+    lastName: string;
+    email: string;
+    message: string;
+}

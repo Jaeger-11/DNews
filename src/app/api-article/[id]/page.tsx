@@ -6,6 +6,7 @@ import { apiArticle } from "@/interface";
 import InputComment from "@/components/InputComment";
 import ApiComment from "@/components/ApiComment"; 
 import FirebaseComments from "@/components/FirebaseComments";
+import HorizontalAds from "@/components/HorizontalAds";
 
 const page = async ({params}: {params: {id:string}}) => {
     const article:apiArticle = await FetchArticle(params.id);
@@ -61,6 +62,7 @@ const page = async ({params}: {params: {id:string}}) => {
       </article>
       : undefined
     }
+    <HorizontalAds/>
     </Layout>
   )
 }
