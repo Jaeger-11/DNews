@@ -47,6 +47,7 @@ const ApiArticles = () => {
     useEffect(() => {
         searchArticles();
     }, [param])
+    let it:number = 0
 
     return (
     <section className="">
@@ -57,20 +58,38 @@ const ApiArticles = () => {
                     <h3 className="font-semibold p-2 mb-4">No Article matches your search! <span className="text-accent underline italic"> View Latest News </span></h3>
                 :
                 searchResponse.map((item:apiArticle) => {
+                    it++
                     return (
-                        <ApiArticle {...item} key={item.id}/>
+                        <div>
+                        {(it % 20 === 0) ?
+                            <>
+                                <HorizontalAds bg="transparent"/>
+                                <ApiArticle {...item} key={item.id}/>
+                            </> : 
+                            <ApiArticle {...item} key={item.id}/>
+                        }
+                        </div>
                     )
                 })}
                 {
                 param.length === 0 && 
                 articles.map((item:apiArticle) => {
+                    it++
                     return (
-                        <ApiArticle {...item} key={item.id}/>
+                        <div key={item.id}>
+                        {(it % 20 === 0) ?
+                            <>
+                                <HorizontalAds bg="transparent"/>
+                                <ApiArticle {...item} key={item.id}/>
+                            </> : 
+                            <ApiArticle {...item} key={item.id}/>
+                        }
+                        </div>
                     )
                 })}
             </div>
         </main>
-        <HorizontalAds/>
+        <HorizontalAds bg="primary"/>
     </section>
   )
 }

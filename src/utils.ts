@@ -43,6 +43,14 @@ export const initials = (username:string) => {
     return letters
 }
 
+export const randomAds = (list:{imageUrl:string, siteUrl:string}[]) => {
+    let random = list[Math.floor(Math.random() * list.length)];
+    return(random);
+}
+
+
+// FETCHING DATA
+
 export const FetchArticles = async () => {
     const { data } = await useAxios('/posts')
     return data;

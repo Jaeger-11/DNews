@@ -6,7 +6,6 @@ import { db } from "@/database/config";
 import { addDoc, collection } from "firebase/firestore"; 
 
 const InputComment = (data:{id:string}) => {
-    const dispatch = useAppDispatch();
     const { uid, username, email } = useAppSelector((state) => state.user);
     const [showNotification, setShowNotification] = useState<boolean>(false);
     const [opinion, setOpinion] = useState('')
@@ -25,7 +24,6 @@ const InputComment = (data:{id:string}) => {
                     userId: uid,
                     created: new Date()
                 })
-                docRef.id ? console.log(docRef.id) : undefined
                 setOpinion('')
             } catch (error) {
                 console.log(error);

@@ -6,7 +6,9 @@ import Link from "next/link"
 import { auth } from "@/database/config"
 import { authenticate } from "@/interface";
 import { useRouter } from "next/navigation";
-import { signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword, onAuthStateChanged, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { db } from "@/database/config"
+import { setDoc, doc } from "firebase/firestore"
 
 const Authentication = () => {
     const router = useRouter();
@@ -15,6 +17,10 @@ const Authentication = () => {
     const [authError, setAuthError] = useState<string>('')
 
     const provider = new GoogleAuthProvider();
+
+    const createData = async (id:string) => {
+        await setDoc(doc(db, "users", id), {bookmarks:[]});
+    }
 
     const handleInput = ({target}:React.ChangeEvent<HTMLInputElement>) => {
         setAuthError('')
@@ -26,10 +32,6 @@ const Authentication = () => {
         signInWithEmailAndPassword(auth, userData.email, userData.password)
         .then((userCredential) => {
             setAuthError("")
-            // dispatch(updateNotification({text:"User Successfully Signed In!", imageUrl: 'show'}))
-            // setTimeout(() => {
-            //     dispatch(closeNotification())
-            // }, 2000);
             console.log("User Signed In Successfully")
             setUserData({email:"", password:"", username: ""})
             router.push('/')
@@ -45,19 +47,14 @@ const Authentication = () => {
                     displayName: userData.username
                 }).then(() => {
                     // Profile updated!
-                    // ...
                 }).catch((error) => {
                     console.log(error);
                     setAuthError("Error occurred, try again...")
                 });
             }
             setUserData({email:"", password:"", username: ""})
-            // createData(auth.currentUser?.uid || '')
+            createData(auth.currentUser?.uid || '')
             setAuthError("")
-            // dispatch(updateNotification({text:"User Successfully Signed In!", imageUrl: 'show'}))
-            // setTimeout(() => {
-            //     dispatch(closeNotification())
-            // }, 2000);
             router.push('/')
         })
         .catch((error) => setAuthError("Error occurred, try again..."))
@@ -93,14 +90,8 @@ const Authentication = () => {
             const token = credential?.accessToken;
             // The signed-in user info.
             const user = result.user;
-            // createData(auth.currentUser?.uid || '')
-            // dispatch(updateNotification({text:"User Successfully Signed In!", imageUrl: 'show'}))
-            // setTimeout(() => {
-            //     dispatch(closeNotification())
-            // }, 2000);
+            createData(auth.currentUser?.uid || '')
             router.push('/')
-            // IdP data available using getAdditionalUserInfo(result)
-            // ...
         }).catch((error) => {
             // Handle Errors here.
             const errorCode = error.code;
@@ -109,7 +100,6 @@ const Authentication = () => {
             const email = error.customData.email;
             // The AuthCredential type that was used.
             const credential = GoogleAuthProvider.credentialFromError(error);
-            // ...
         });
     }
 

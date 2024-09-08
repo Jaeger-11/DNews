@@ -47,3 +47,8 @@ export interface contact{
     email: string;
     message: string;
 }
+
+export interface ads{
+    imageUrl:string; 
+    siteUrl:string
+}

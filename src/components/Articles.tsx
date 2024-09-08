@@ -54,7 +54,6 @@ const Articles = () => {
         <Header/>
         <main className="grid grid-cols-1 pb-10">
             {articles.length > 0 ? articles.map((item:article) => {
-                // const { title, id, body } = item
                 return (
                     <Article {...item} key={item.id}/>
                 )
@@ -64,7 +63,7 @@ const Articles = () => {
             </h3>
             }
         </main>
-        <HorizontalAds/>
+        <HorizontalAds bg="transparent"/>
     </section>
   )
 }

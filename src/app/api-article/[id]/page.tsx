@@ -7,6 +7,7 @@ import InputComment from "@/components/InputComment";
 import ApiComment from "@/components/ApiComment"; 
 import FirebaseComments from "@/components/FirebaseComments";
 import HorizontalAds from "@/components/HorizontalAds";
+import Bookmark from "@/components/Bookmark";
 
 const page = async ({params}: {params: {id:string}}) => {
     const article:apiArticle = await FetchArticle(params.id);
@@ -44,6 +45,8 @@ const page = async ({params}: {params: {id:string}}) => {
 
         <p>{article.body} {article.body}</p>
 
+        <Bookmark id={params.id}/>
+
         <section>
           {/* COMMENTS */}
           <h2 className="text-xl font-primary uppercase font-semibold text-primary mb-2">Comments</h2>
@@ -62,7 +65,7 @@ const page = async ({params}: {params: {id:string}}) => {
       </article>
       : undefined
     }
-    <HorizontalAds/>
+    <HorizontalAds bg="transparent"/>
     </Layout>
   )
 }

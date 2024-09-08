@@ -13,7 +13,7 @@ const Layout = ({
         <Sidebar/>
         <section className="flex-1 h-svh overflow-y-scroll">
           {/*Short Advertisement */}
-          <HorizontalAds/>
+          <HorizontalAds bg='primary'/>
           <main className="grid grid-cols-4">
             <div className="col-span-3">
             <main className="p-2">

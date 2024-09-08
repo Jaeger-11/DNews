@@ -6,6 +6,7 @@ import Layout from "@/components/Layout";
 import Comment from "@/components/Comment";
 import { comment } from "@/interface";
 import InputComment from "@/components/InputComment";
+import HorizontalAds from "@/components/HorizontalAds";
 
 const page = ({params}: {params: {id:string}}) => {
   const article  = newsArticles.find((item) => item.id.toString() === params.id);
@@ -70,6 +71,7 @@ const page = ({params}: {params: {id:string}}) => {
       </article>
       : undefined
     }
+    <HorizontalAds bg="transparent"/>
     </Layout>
   )
 }
