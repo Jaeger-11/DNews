@@ -7,6 +7,7 @@ import Comment from "@/components/Comment";
 import { comment } from "@/interface";
 import InputComment from "@/components/InputComment";
 import HorizontalAds from "@/components/HorizontalAds";
+import Bookmark from "@/components/Bookmark";
 
 const page = ({params}: {params: {id:string}}) => {
   const article  = newsArticles.find((item) => item.id.toString() === params.id);
@@ -53,6 +54,8 @@ const page = ({params}: {params: {id:string}}) => {
         </div>
 
         <p>{article.content} {article.content}</p>
+
+        <Bookmark id={params.id}/>
 
         <section>
           {/* COMMENTS */}

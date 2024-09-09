@@ -10,6 +10,7 @@ import { setCategory, setSearch } from "@/lib/features/contentSlice";
 import { newsCategories } from "@/data";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import LogOut from "./LogOut";
 
 const Sidebar:React.FC = () => {
     const router = useRouter();
@@ -28,16 +29,6 @@ const Sidebar:React.FC = () => {
         }
     })
 
-    const handleLogOut = () => {
-        signOut(auth).then(() => {
-            // Sign-out successful.
-            dispatch(logOut())
-        }).catch((error) => {
-        // An error happened.
-        console.log(error)
-        });
-    }
-
     const selectCategory = (cat:string) => {
         router.push('/')
         setSelectedCategory(cat);
@@ -55,10 +46,10 @@ const Sidebar:React.FC = () => {
         <Logo style=""/>
         {
             uid ? 
-            <div className="flex gap-1 items-center ">
+            <Link href={'/profile'} className="flex gap-1 items-center w-max cursor-pointer hover:text-primary hover:underline">
                 <svg className="size-4" fill="#1D3557" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#1D3557"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M12,1a11,11,0,0,0,0,22,1,1,0,0,0,0-2,9,9,0,1,1,9-9v2.857a1.857,1.857,0,0,1-3.714,0V7.714a1,1,0,1,0-2,0v.179A5.234,5.234,0,0,0,12,6.714a5.286,5.286,0,1,0,3.465,9.245A3.847,3.847,0,0,0,23,14.857V12A11.013,11.013,0,0,0,12,1Zm0,14.286A3.286,3.286,0,1,1,15.286,12,3.29,3.29,0,0,1,12,15.286Z"></path></g></svg>
                 <p className="text-sm font-bold capitalize">{username}</p>
-            </div>
+            </Link>
             :
             <Link href='/authenticate' className="text-sm underline cursor-pointer hover:text-accent transition-colors">Login / Signup</Link>
         }
@@ -84,7 +75,7 @@ const Sidebar:React.FC = () => {
         <div>
         {
             uid && 
-            <p onClick={handleLogOut} className="text-sm text-red-500 font-semibold cursor-pointer"> Log Out </p>
+            <LogOut/>
         }
         </div>
     </aside>

@@ -1,7 +1,8 @@
 "use client"
 import { useState, useEffect } from "react";
 import { db } from "./config";
-import { collection, onSnapshot, query, where } from "firebase/firestore";
+import { collection, onSnapshot, query, where, doc } from "firebase/firestore";
+import { useAppSelector } from "@/lib/hooks";
 
 const getComments = (data:{id:string}) => {
     const [comments, setComments]:any = useState([]);
@@ -23,4 +24,23 @@ const getComments = (data:{id:string}) => {
     return {comments};
 }
 
-export { getComments };
+const getBookmarks = () => {
+    const { uid } = useAppSelector((state) => state.user);
+    const [ bookmarks, setBookmarks ] = useState<{articleId:string}[]>([])
+
+    const runGet = () => {
+        if(uid.length > 0){
+            onSnapshot(doc(db, "users", uid), (doc) => {
+                setBookmarks(doc.data()?.bookmarks);
+            });
+        }
+    }
+    
+    useEffect(() => {
+        runGet();
+    }, [uid])
+
+    return {bookmarks};
+}
+
+export { getComments, getBookmarks };
