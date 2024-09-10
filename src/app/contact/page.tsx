@@ -54,7 +54,7 @@ const page = () => {
         </section>
         <ContactForm/>
       </div>
-      <HorizontalAds/>
+      <HorizontalAds bg='transparent'/>
     </Layout>
   )
 }
