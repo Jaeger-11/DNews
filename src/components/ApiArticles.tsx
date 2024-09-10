@@ -26,14 +26,9 @@ const ApiArticles = () => {
         })
         dispatch(setCategory({category:'Top Matches'}))
         setSearchResponse(response)
-        // console.log(param,response)
         if(param.length === 0){
             dispatch(setCategory({category:'latest news'}))
-            // setSearchResponse(articles)
         } 
-        // else {
-        //     setSearchResponse(articles);
-        // }
     }
 
     useEffect(() => {

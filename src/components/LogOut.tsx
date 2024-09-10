@@ -17,7 +17,7 @@ const LogOut = () => {
     }
 
   return (
-    <p onClick={handleLogOut} className="text-sm text-red-500 font-semibold cursor-pointer"> Log Out </p>
+    <p onClick={handleLogOut} className="text-sm w-max text-red-500 font-semibold cursor-pointer"> Log Out </p>
   )
 }
 
