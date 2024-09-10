@@ -55,7 +55,7 @@ const ApiArticles = () => {
                 searchResponse.map((item:apiArticle) => {
                     it++
                     return (
-                        <div>
+                        <div key={item.id}>
                         {(it % 20 === 0) ?
                             <>
                                 <HorizontalAds bg="transparent"/>

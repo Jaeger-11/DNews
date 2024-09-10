@@ -1,9 +1,21 @@
 "use client"
-import { getComments } from "@/database/useFirestore"
 import { initials } from "@/utils";
+import { useState, useEffect } from "react";
+import { db } from "@/database/config";
+import { collection, onSnapshot, query, where} from "firebase/firestore";
 
 const FirebaseComments = (data:{id:string}) => {
-    const { comments } = getComments(data);
+    const [comments, setComments]:any = useState([]);
+    const collectionRef = collection(db, 'comments');
+    const order = query(collectionRef, where("articleId", "==", `${data.id}`));
+    onSnapshot(order, (querySnapshot) => {
+        let documents:object[] = []
+        querySnapshot.forEach((doc) => {
+            documents.push({...doc.data(), id:doc.id});
+        });
+        setComments(documents)
+    });
+
   return (
     comments.map((item:{username:string, body:string, id:number}) => {
         return (

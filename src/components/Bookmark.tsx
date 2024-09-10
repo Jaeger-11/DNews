@@ -1,14 +1,25 @@
 "use client";
-import { doc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
-import { useState } from "react";
+import { doc, updateDoc, arrayUnion, arrayRemove, onSnapshot } from "firebase/firestore";
+import { useState, useEffect } from "react";
 import { useAppSelector } from "@/lib/hooks";
 import { db } from "@/database/config";
-import { getBookmarks } from "@/database/useFirestore";
 
 const Bookmark = (data:{id:string}) => {
-    let { bookmarks } = getBookmarks();
     const { uid } = useAppSelector((state) => state.user);
     const [message, setMessage] = useState({text:'', success:false})
+    const [ bookmarks, setBookmarks ] = useState<{articleId:string}[]>([])
+
+    const runGet = () => {
+        if(uid.length > 0){
+            onSnapshot(doc(db, "users", uid), (doc) => {
+                setBookmarks(doc.data()?.bookmarks);
+            });
+        }
+    }
+    
+    useEffect(() => {
+        runGet();
+    }, [uid, runGet])
 
     let existing = bookmarks?.filter((item) => item.articleId === data.id).length > 0;
 

@@ -1,12 +1,27 @@
 "use client"
-import { getBookmarks } from "@/database/useFirestore";
 import { useAppSelector } from "@/lib/hooks";
 import LogOut from "./LogOut";
 import BookmarkItem from "./BookmarkItem";
+import HorizontalAds from "./HorizontalAds";
+import { useState, useEffect } from "react";
+import { db } from "@/database/config";
+import { onSnapshot, doc } from "firebase/firestore";
 
 const UserProfile = () => {
-    const { bookmarks } = getBookmarks();
-    const { username, email } = useAppSelector((state) => state.user);
+    const { username, email, uid } = useAppSelector((state) => state.user);
+    const [ bookmarks, setBookmarks ] = useState<{articleId:string}[]>([])
+
+    const runGet = () => {
+        if(uid.length > 0){
+            onSnapshot(doc(db, "users", uid), (doc) => {
+                setBookmarks(doc.data()?.bookmarks);
+            });
+        }
+    }
+    
+    useEffect(() => {
+        runGet();
+    }, [uid, runGet])
 
   return (
     <section className="p-2">
@@ -21,7 +36,7 @@ const UserProfile = () => {
         </div>
         <div className="mt-2"> <LogOut/> </div>
 
-        <section className="my-4">
+        <section className="my-4 mt-8 border-t">
             <h3 className="font-primary text-2xl font-semibold text-primary my-4">Your Bookmarks</h3>
             <div>
                 {bookmarks.length > 0 && bookmarks.map((id:{articleId:string}) => {
@@ -31,6 +46,7 @@ const UserProfile = () => {
                 })}
             </div>
         </section>
+        <HorizontalAds bg="transparent"/>
     </section>
   )
 }
