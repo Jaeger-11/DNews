@@ -14,12 +14,10 @@ const TrendingSlide = () => {
     useEffect(() => {
         setTrends(shuffleArticle(newsArticles))
     },[])
-    // let trends = shuffleArticle(newsArticles) || newsArticles.slice(0,4);
 
   return (
-    <div className='mb-6 pb-2 border-b' >
+    <div className='mb-6 pb-2 border-b w-full' >
         <h2 className="font-bold text-xl uppercase mb-2 font-primary text-primary">Trending</h2>
-
         <Splide 
         options={{
         rewind: true,
@@ -29,18 +27,19 @@ const TrendingSlide = () => {
         arrows: false,
         pagination: false,
         speed: 1000,
-        rewindSpeed: 1000
-        }}>
+        rewindSpeed: 1000,
+        }}
+        >
             {trends.map((article) => {
                 return (
                     <SplideSlide 
                     key={article.id}
                     >
-                        <Link href={`/article/${article.id}`} className="grid grid-cols-2 gap-4 cursor-pointer items-center p-2">
-                            <div>
+                        <Link href={`/article/${article.id}`} className="grid grid-cols-1 md:grid-cols-2 gap-4 cursor-pointer md:items-center p-2">
+                            <div className=''>
                             <Image 
-                            width={600}
-                            height={600}
+                            width={100}
+                            height={100}
                             src={article.imageUrl}
                             alt={article.title}
                             className="w-full aspect-video object-center object-cover rounded-sm"

@@ -6,7 +6,7 @@ import { db } from "@/database/config";
 import { addDoc, collection } from "firebase/firestore"; 
 
 const InputComment = (data:{id:string}) => {
-    const { uid, username, email } = useAppSelector((state) => state.user);
+    const { uid, username } = useAppSelector((state) => state.user);
     const [showNotification, setShowNotification] = useState<boolean>(false);
     const [opinion, setOpinion] = useState('')
 
@@ -37,7 +37,7 @@ const InputComment = (data:{id:string}) => {
     }
   return (
     <>
-        <form onSubmit={handleSubmit} className="w-2/3 p-2 border rounded-md">
+        <form onSubmit={handleSubmit} className="w-full sm:w-2/3 p-2 border rounded-md">
             <input onChange={handleInput} value={opinion} type="text" name="" id="" placeholder="Add your opinion / comment"  className="w-full border-none placeholder:text-base text-primary outline-none bg-transparent"/>
         </form>
         {showNotification && 

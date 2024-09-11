@@ -35,3 +35,7 @@
 .authenticate input{
   outline: none;
 }
+
+.initial{
+  width: initial;
+}

@@ -2,7 +2,6 @@
 import { useState } from "react"
 import Logo from "./Logo"
 import Back from "./Back"
-import Link from "next/link"
 import { auth } from "@/database/config"
 import { authenticate } from "@/interface";
 import { useRouter } from "next/navigation";
@@ -47,13 +46,13 @@ const Authentication = () => {
                     displayName: userData.username
                 }).then(() => {
                     // Profile updated!
+                    createData(auth.currentUser?.uid || '')
                 }).catch((error) => {
                     console.log(error);
                     setAuthError("Error occurred, try again...")
                 });
             }
             setUserData({email:"", password:"", username: ""})
-            createData(auth.currentUser?.uid || '')
             setAuthError("")
             router.push('/')
         })

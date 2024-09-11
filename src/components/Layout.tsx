@@ -11,11 +11,10 @@ const Layout = ({
   return (
     <div className="font-secondary flex">
         <Sidebar/>
-        <section className="flex-1 h-svh overflow-y-scroll">
-          {/*Short Advertisement */}
+        <section className="md:flex-1 h-svh overflow-y-scroll">
           <HorizontalAds bg='primary'/>
-          <main className="grid grid-cols-4">
-            <div className="col-span-3">
+          <main className="grid md:grid-cols-4">
+            <div className="md:col-span-3">
             <main className="p-2">
                 {children}
             </main>

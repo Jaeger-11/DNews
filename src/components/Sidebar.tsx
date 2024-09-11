@@ -42,7 +42,7 @@ const Sidebar:React.FC = () => {
     }
 
   return (
-    <aside className="h-svh min-h-max p-4 flex flex-col w-max justify-between border-r">
+    <aside className="h-svh hidden min-h-max p-4 md:flex flex-col w-max justify-between border-r">
         <Logo style=""/>
         {
             uid ? 

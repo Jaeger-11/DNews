@@ -47,7 +47,7 @@ const ApiArticles = () => {
     return (
     <section className="">
         <Header/>
-        <main className="grid grid-cols-1 pb-10">
+        <main className="pb-10">
             <div>
                 {searchResponse.length === 0 && param.length > 0 ?
                     <h3 className="font-semibold p-2 mb-4">No Article matches your search! <span className="text-accent underline italic"> View Latest News </span></h3>

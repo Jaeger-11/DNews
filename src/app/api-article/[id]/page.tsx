@@ -16,7 +16,7 @@ const page = async ({params}: {params: {id:string}}) => {
   return (
     <Layout>
       {article ? 
-      <article className="p-4 flex flex-col gap-3 mb-10">
+      <article className="p-2 md:p-4 flex flex-col gap-3 mb-4">
         <Back cancel={false}/>
         
         <h3 className="text-[28px] capitalize font-bold font-primary md:w-3/4 text-dark">{article.title}</h3>

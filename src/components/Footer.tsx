@@ -5,20 +5,20 @@ const Footer = () => {
   return (
     <footer className="w-full bg-dark px-4 py-6 text-secondary">
       <section>
-        <article className="">
+        <article className="mb-4 sm:mb-0">
           <Logo style="text-4xl"/>
           <h3 className="font-primary my-2 underline">Your Gateway to the World’s Stories.</h3>
           <p className="text-sm md:w-3/4">Stay informed with the latest news, trends, and updates from around the globe. Dive into diverse categories, share your voice, and connect with a community of engaged readers. Don’t miss out—bookmark your favorite articles and stay ahead of the news curve with DNews.</p>
         </article>
 
-        <div className="flex gap-10">
-          <ul className="text-sm my-4 capitalize">
+        <div className="flex flex-col sm:flex-row gap-4 md:gap-10">
+          <ul className="text-sm sm:my-4 capitalize">
             <p className="text-base font-semibold text-accent mb-1">About</p>
             <li className="hover:underline w-max"><Link href={'/about'}>Who we are</Link></li>
             <li className="hover:underline w-max"><Link href={'/contact'}>Contact Information</Link></li>
             <li className="hover:underline w-max"><Link href={'/advertise'}>Advertise</Link></li>
           </ul>
-          <ul className="text-sm my-4 capitalize">
+          <ul className="text-sm sm:my-4 capitalize">
             <p className="text-base font-semibold text-accent mb-1">Legal</p>
             <li className="hover:underline w-max"><Link href={'/terms-of-service'}>Terms of service</Link></li>
             <li className="hover:underline w-max"><Link href={'/privacy-policy'}>Privacy Policy</Link></li>
@@ -37,7 +37,7 @@ const Footer = () => {
         </div>
       </section>
       <div>
-        <p className="text-white text-center text-sm italic"> Copyright @2024 DNews. All rights reserved </p>
+        <p className="text-white text-center text-sm italic mt-4 sm:mt-0"> Copyright @2024 DNews. All rights reserved </p>
       </div>
     </footer>
   )
