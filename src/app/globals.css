@@ -39,3 +39,7 @@
 .initial{
   width: initial;
 }
+
+.menu span{
+  @apply w-full h-1 bg-dark block rounded-sm;
+}

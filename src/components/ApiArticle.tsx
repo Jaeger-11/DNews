@@ -17,7 +17,7 @@ const ApiArticle = ({ id, title, body}:apiArticle) => {
         className="w-full md:w-4/5 aspect-video object-cover object-center"
         />
     </div>
-    <div className="capitalize grid md:grid-cols-3 gap-2 text-sm mt-2">
+    <div className="capitalize grid grid-cols-2 md:grid-cols-3 gap-2 text-sm mt-2">
         <p className="font-semibold">{'Falodun Damilola'}</p>
         <p className="hidden md:block">{'World'}</p>
         <p className="text-primary text-right md:text-left">{'23rd-August-2024'}</p>
