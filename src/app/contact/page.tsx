@@ -6,7 +6,7 @@ import ContactForm from '@/components/ContactForm'
 const page = () => {
   return (
     <Layout>
-      <div className='text-dark p-4 md:w-3/4'>
+      <div className='text-dark p-2 md:p-4 md:w-3/4'>
         <h3 className="font-primary text-primary font-semibold text-2xl">Contact Us</h3>
         <p>We’re here to help and answer any questions you might have. We look forward to hearing from you!</p>
         <section className='flex flex-col gap-4 mt-4 [&_li]:ml-4 [&_p]:mb-2 [&_p]:font-primary [&_p]:font-bold [&_a]:text-primary [&_a]:underline [&_a]:font-semibold [&_ul]:list-disc'>

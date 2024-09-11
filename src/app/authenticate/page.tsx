@@ -2,7 +2,7 @@ import Authentication from "@/components/Authentication"
 
 const page = () => {
   return (
-    <div className="grid md:grid-cols-3 w-full">
+    <div className=" flex flex-col-reverse md:grid md:grid-cols-3 w-full">
         <section className="flex flex-col gap-4 justify-center authenticate-side p-4 text-dark">
             <article>
               <h3 className="font-bold text-2xl font-primary">DNews</h3>

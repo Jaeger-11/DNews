@@ -2,6 +2,7 @@ import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 import HorizontalAds from "./HorizontalAds";
 import Aside from "./Aside";
+import MobileHeader from "./MobileHeader";
 
 const Layout = ({
     children,
@@ -9,7 +10,8 @@ const Layout = ({
     children: React.ReactNode;
   }>) => {
   return (
-    <div className="font-secondary flex">
+    <div className="font-secondary flex flex-col md:flex-row">
+        <MobileHeader/>
         <Sidebar/>
         <section className="md:flex-1 h-svh overflow-y-scroll">
           <HorizontalAds bg='primary'/>

@@ -31,7 +31,7 @@ const HorizontalAds = (data:{bg:string}) => {
   // }, [ad])
 
   return (
-    <div className={`p-3 bg-${data.bg} text-white flex justify-center w-full`}>
+    <div className={`p-1 bg-transparent md:bg-${data.bg} text-white flex justify-center w-full`}>
       <Image src={ad.imageUrl} className="md:max-h-[20svh] w-full md:object-center md:object-contain cursor-pointer" width={300} height={500} alt="ads" />
     </div>
   )
