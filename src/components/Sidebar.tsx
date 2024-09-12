@@ -1,10 +1,9 @@
 "use client"
 import Link from "next/link";
 import Logo from "./Logo";
-import { useAppSelector } from "@/lib/hooks";
-import { onAuthStateChanged, signOut } from "firebase/auth";
+import { useAppSelector, useAppDispatch } from "@/lib/hooks";
+import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "@/database/config";
-import { useAppDispatch } from "@/lib/hooks";
 import { setUser, logOut } from "@/lib/features/userSlice";
 import { setCategory, setSearch } from "@/lib/features/contentSlice";
 import { newsCategories } from "@/data";
@@ -36,7 +35,7 @@ const Sidebar:React.FC = () => {
     }
 
     const handleSearch = ({target}:React.ChangeEvent<HTMLInputElement>) => {
-        router.push('/')
+        router.push('/#searchResults')
         it = target.value
         dispatch(setSearch({text:it}));
     }
@@ -51,7 +50,7 @@ const Sidebar:React.FC = () => {
                 <p className="text-sm font-bold capitalize">{username}</p>
             </Link>
             :
-            <Link href='/authenticate' className="text-sm underline cursor-pointer hover:text-accent transition-colors">Login / Signup</Link>
+            <Link href='/authenticate' className="text-sm font-primary underline cursor-pointer hover:text-accent transition-colors">Login / Signup</Link>
         }
 
         <section>

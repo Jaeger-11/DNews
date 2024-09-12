@@ -6,29 +6,25 @@ import ApiArticle from "./ApiArticle";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { setCategory } from "@/lib/features/contentSlice";
+import { setCategory, setSearch } from "@/lib/features/contentSlice";
 
 const ApiArticles = () => {
     const dispatch = useAppDispatch();
     const { param } = useAppSelector((state) => state.content);
-    const [] = useState()
     const [articles, setArticles] = useState([]);
     const [searchResponse, setSearchResponse] = useState(articles);
 
     const searchArticles = () => {
-        let response:any = [];
-        articles.map((item:{title:string, body:string, id:number}) => {
-            if(item.title.toLowerCase().includes(param)){
-                response.push(item);
-            } else {
-                
-            }
-        })
+        let response:any = articles.filter((item:apiArticle) => item.title.toLowerCase().includes(param.toLowerCase()));
         dispatch(setCategory({category:'Top Matches'}))
         setSearchResponse(response)
         if(param.length === 0){
             dispatch(setCategory({category:'latest news'}))
         } 
+    }
+
+    const refreshArticles = () => {
+        setSearchResponse(articles);
     }
 
     useEffect(() => {
@@ -45,12 +41,12 @@ const ApiArticles = () => {
     let it:number = 0
 
     return (
-    <section className="">
+    <section className="scroll-padding" id="searchResults">
         <Header/>
         <main className="pb-10">
             <div>
                 {searchResponse.length === 0 && param.length > 0 ?
-                    <h3 className="font-semibold p-2 mb-4">No Article matches your search! <span className="text-accent underline italic"> View Latest News </span></h3>
+                    <h3 className="font-semibold p-2 mb-4">No Article matches your search! "{param}" <span className="text-accent underline italic cursor-pointer" onClick={refreshArticles}> View Latest News </span></h3>
                 :
                 searchResponse.map((item:apiArticle) => {
                     it++

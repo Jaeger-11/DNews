@@ -16,7 +16,7 @@ const TrendingSlide = () => {
     },[])
 
   return (
-    <div className='mb-6 pb-2 border-b w-full' >
+    <div className='mb-6 pb-2 border-b w-full' id='slide'>
         <h2 className="font-bold text-xl uppercase mb-2 font-primary text-primary">Trending</h2>
         <Splide 
         options={{

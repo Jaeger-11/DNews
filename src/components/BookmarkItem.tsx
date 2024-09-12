@@ -14,7 +14,7 @@ const BookmarkItem = (data:{articleId:string}) => {
         setBookmarked(data.data)
     )
     .catch(error => console.log(error))
-}, [])
+  }, [])
 
   return (
     <Link href={`/api-article/${bookmarked.id}`} className="cursor-pointer block p-2 border-b border-secondary text-dark hover:bg-secondary transition-colors">

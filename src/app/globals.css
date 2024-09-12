@@ -7,6 +7,9 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 } */
+html {
+  scroll-behavior: smooth;
+}
 ::-webkit-scrollbar {
   width: 3px;
 }
@@ -42,4 +45,20 @@
 
 .menu span{
   @apply w-full h-1 bg-dark block rounded-sm;
+  transition: transform ease .3s;
+}
+
+.active span:nth-child(1){
+  transform: translate3d(0, 8px, 0) rotate(45deg);
+}
+.active span:nth-child(3){
+  transform: translate3d(0, -8px, 0)  rotate(-45deg);
+}
+.active span:nth-child(2){
+  background-color: transparent;
+  transition: background-color .3s ease;
+  opacity: 0;
+}
+.scroll-padding{
+  scroll-margin-block: 4rem;
 }
