@@ -46,7 +46,7 @@ const ApiArticles = () => {
         <main className="pb-10">
             <div>
                 {searchResponse.length === 0 && param.length > 0 ?
-                    <h3 className="font-semibold p-2 mb-4">No Article matches your search! "{param}" <span className="text-accent underline italic cursor-pointer" onClick={refreshArticles}> View Latest News </span></h3>
+                    <h3 className="font-semibold p-2 mb-4">No Article matches your search! &quot;{param}&quot; <span className="text-accent underline italic cursor-pointer" onClick={refreshArticles}> View Latest News </span></h3>
                 :
                 searchResponse.map((item:apiArticle) => {
                     it++
