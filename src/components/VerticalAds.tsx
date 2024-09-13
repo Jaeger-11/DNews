@@ -3,6 +3,7 @@ import { ads } from "@/interface"
 import { randomAds } from "@/utils"
 import Image from "next/image"
 import { useState, useEffect } from "react";
+import MotionDiv from "./MotionDiv";
 
 const adsVerticalData = [
   {
@@ -34,9 +35,12 @@ const VerticalAds = () => {
 
 
   return (
-    <div>
+    <MotionDiv
+    initial={{x: 50, opacity:0.2}}
+    whileInView={{x: 0, opacity:1, transition:{duration:0.6}}}
+    >
       <Image src={ad.imageUrl} className="w-full cursor-pointer my-8" width={500} height={500} alt="ads" />
-    </div>
+    </MotionDiv>
   )
 }
 

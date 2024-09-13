@@ -7,12 +7,13 @@ import { useAppSelector, useAppDispatch } from "@/lib/hooks";
 import Link from 'next/link';
 import { newsCategories } from '@/data';
 import LogOut from './LogOut';
+import { motion } from 'framer-motion';
 
 const MobileHeader = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const { username, uid } = useAppSelector((state) => state.user );
-  const { param, category } = useAppSelector((state) => state.content)
+  const { category } = useAppSelector((state) => state.content)
   const [ selectedCategory, setSelectedCategory ] = useState<string>(category || 'Latest News');
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [it, setIt] = useState<string>('')
@@ -50,7 +51,11 @@ const MobileHeader = () => {
           <Logo style='text-right'/>
         </div>
 
-        { isOpen && <nav className={`absolute w-full bg-light top-[100%] left-0 border-b`}>
+        { isOpen && 
+        <motion.nav 
+        initial={{opacity:0.7, x:-80}}
+        whileInView={{opacity:1, x:0, transition:{duration:1}}}
+        className={`absolute w-full bg-light top-[100%] left-0 border-b`}>
           {/* search */}
           <section className='p-2 bg-secondary'>
             <div className="border w-full bg-light border-dark rounded-sm flex gap-2 items-center">
@@ -92,7 +97,7 @@ const MobileHeader = () => {
               }
             </div>
           </section>
-        </nav>}
+        </motion.nav>}
       </div>
     </div>
   )

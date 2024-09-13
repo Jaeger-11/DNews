@@ -2,6 +2,7 @@
 import { initials } from "@/utils";
 import { useState, useEffect } from "react";
 import { db } from "@/database/config";
+import { motion } from "framer-motion";
 import { collection, onSnapshot, query, where} from "firebase/firestore";
 
 const FirebaseComments = (data:{id:string}) => {
@@ -19,13 +20,17 @@ const FirebaseComments = (data:{id:string}) => {
   return (
     comments.map((item:{username:string, body:string, id:number}) => {
         return (
-            <article key={item.id} className="p-2 pb-4 flex gap-2 border-b">
+            <motion.article 
+            initial={{opacity:0, y:50}}
+            whileInView={{opacity:1, y:0, transition:{duration:0.5}}}
+            viewport={{once:true}}
+            key={item.id} className="p-2 pb-4 flex gap-2 border-b">
                 <div className="text-primary bg-secondary uppercase rounded-full size-10 flex items-center justify-center font-semibold">{initials(item.username)}</div>
                 <div className="flex-1">
                     <h3 className="mt-2 font-semibold capitalize text-gray-500">{item.username}</h3>
                     <p className="mt-1">{item.body}</p>
                 </div>
-            </article>
+            </motion.article>
         )
     })
   )

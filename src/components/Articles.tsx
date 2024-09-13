@@ -1,13 +1,13 @@
 "use client";
 import { newsArticles } from "@/data"
-import { apiArticle, article } from "@/interface";
-import { FetchArticles } from "@/utils";
+import { article } from "@/interface";
 import HorizontalAds from "./HorizontalAds";
 import Header from "./Header";
 import Article from "./Article";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { useEffect, useState } from "react";
 import { setCategory } from "@/lib/features/contentSlice";
+import { motion } from "framer-motion";
 
 const Articles = () => {
     const dispatch = useAppDispatch();
@@ -50,7 +50,10 @@ const Articles = () => {
     },[category])
 
   return (
-    <section className="">
+    <motion.section
+    initial={{opacity:0, y:50}}
+    whileInView={{opacity:0.8, y:0, transition:{duration:1}}}
+    >
         <Header/>
         <main className="grid grid-cols-1 pb-10">
             {articles.length > 0 ? articles.map((item:article) => {
@@ -64,7 +67,7 @@ const Articles = () => {
             }
         </main>
         <HorizontalAds bg="transparent"/>
-    </section>
+    </motion.section>
   )
 }
 

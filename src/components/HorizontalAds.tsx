@@ -2,7 +2,8 @@
 import { ads } from "@/interface"
 import { randomAds } from "@/utils"
 import Image from "next/image"
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
+import MotionDiv from "./MotionDiv";
 
 const adsHorizontalData = [
   {
@@ -31,9 +32,12 @@ const HorizontalAds = (data:{bg:string}) => {
   // }, [ad])
 
   return (
-    <div className={`p-2 md:bg-${data.bg} text-white flex justify-center w-full`}>
+    <MotionDiv 
+    initial={{scale: 0.2, opacity:0}}
+    whileInView={{scale: 1, opacity:1, transition:{duration:1}}}
+    className={`p-2 md:bg-${data.bg} text-white flex justify-center w-full`}>
       <Image src={ad.imageUrl} className="md:max-h-[20svh] w-full md:object-center md:object-contain cursor-pointer" width={300} height={500} alt="ads" />
-    </div>
+    </MotionDiv>
   )
 }
 

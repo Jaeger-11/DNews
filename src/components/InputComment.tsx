@@ -1,9 +1,10 @@
 "use client";
-import { useAppDispatch, useAppSelector } from "@/lib/hooks";
+import { useAppSelector } from "@/lib/hooks";
 import Link from "next/link";
 import { useState } from "react";
 import { db } from "@/database/config";
 import { addDoc, collection } from "firebase/firestore"; 
+import { motion } from "framer-motion";
 
 const InputComment = (data:{id:string}) => {
     const { uid, username } = useAppSelector((state) => state.user);
@@ -37,9 +38,12 @@ const InputComment = (data:{id:string}) => {
     }
   return (
     <>
-        <form onSubmit={handleSubmit} className="w-full sm:w-2/3 p-2 border rounded-md">
+        <motion.form 
+        initial={{opacity:0}}
+        whileInView={{opacity:1, transition:{duration:0.5}}}
+        onSubmit={handleSubmit} className="w-full sm:w-2/3 p-2 border rounded-md">
             <input onChange={handleInput} value={opinion} type="text" name="" id="" placeholder="Add your opinion / comment"  className="w-full border-none placeholder:text-base text-primary outline-none bg-transparent"/>
-        </form>
+        </motion.form>
         {showNotification && 
         <p className="capitalize text-sm pt-2 text-red-500"> Comments are limited to registered users. Please sign in or create an account to join the discussion. <br /> <Link href={'/authenticate'} className="text-primary font-semibold">Sign in / Create account</Link></p>
         }
