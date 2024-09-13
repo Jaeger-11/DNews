@@ -14,7 +14,7 @@ const MobileHeader = () => {
   const { username, uid } = useAppSelector((state) => state.user );
   const { param, category } = useAppSelector((state) => state.content)
   const [ selectedCategory, setSelectedCategory ] = useState<string>(category || 'Latest News');
-  const [isOpen, setIsOpen] = useState<boolean>(true);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const [it, setIt] = useState<string>('')
   const selectCategory = (cat:string) => {
     router.push('/')
