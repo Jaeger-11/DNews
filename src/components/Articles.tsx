@@ -25,8 +25,9 @@ const Articles = () => {
 
     const searchArticles = () => {
         let data:article[] = newsArticles.filter((item) => item.title.toLowerCase().includes(param.toLowerCase()))
+        setArticles(data);
+        console.log(data, articles)
         if(param.length > 0){
-            setArticles(data);
             dispatch(setCategory({category:'Top Matches'}))
         }
     }
@@ -48,9 +49,32 @@ const Articles = () => {
 
   return (
     <section  id="searchResults">
-        <Header/>
+        <div className="flex justify-between items-center">
+            <Header/>
+            { param && <p className="text-sm text-red-500 cursor-pointer" onClick={refreshArticles}>Cancel Search</p>}
+        </div>
         <main className="grid grid-cols-1 pb-10">
-            {articles.length > 0 ? articles.map((item:article) => {
+            {( param.length > 0 && articles.length === 0) ? 
+                <h3 className="font-semibold p-2 mt-4">
+                    No Matches! <span className="text-accent cursor-pointer underline italic" onClick={refreshArticles}> View Latest News </span>
+                </h3> : 
+                articles.map((item:article) => {
+                    it++
+                    return (
+                        <div key={item.id}>
+                        {(it % 20 === 0) ?
+                            <>
+                                <HorizontalAds bg="transparent"/>
+                                <Article {...item} key={item.id}/>
+                            </> : 
+                            <Article {...item} key={item.id}/>
+                        }
+                        </div>
+                    )
+                })
+            }
+            {
+            param.length === 0 && newsArticles.map((item:article) => {
                 it++
                 return (
                     <div key={item.id}>
@@ -63,11 +87,7 @@ const Articles = () => {
                     }
                     </div>
                 )
-            }) : 
-            <h3 className="font-semibold p-2 mt-4">
-                No Matches! <span className="text-accent cursor-pointer underline italic" onClick={refreshArticles}> View Latest News </span>
-            </h3>
-            }
+            })}
         </main>
         <HorizontalAds bg="transparent"/>
     </section>
