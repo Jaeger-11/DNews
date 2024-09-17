@@ -21,7 +21,7 @@ const page = () => {
                   </ul>
                 </li>
                 <li>
-                  <span className="font-semibold font-primary text-2xl text-light">Personalize Your News Experience</span> <br />
+                  <span className="font-semibold font-primary text-2xl text-light">Personalize Your News Experience:</span> <br />
                   <ul className="list-disc pl-4 font-medium">
                     <li>Bookmark Articles</li>
                   </ul>

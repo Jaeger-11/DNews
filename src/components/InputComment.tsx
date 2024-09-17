@@ -41,6 +41,7 @@ const InputComment = (data:{id:string}) => {
         <motion.form 
         initial={{opacity:0}}
         whileInView={{opacity:1, transition:{duration:0.5}}}
+        viewport={{once:true}}
         onSubmit={handleSubmit} className="w-full sm:w-2/3 p-2 border rounded-md">
             <input onChange={handleInput} value={opinion} type="text" name="" id="" placeholder="Add your opinion / comment"  className="w-full border-none placeholder:text-base text-primary outline-none bg-transparent"/>
         </motion.form>

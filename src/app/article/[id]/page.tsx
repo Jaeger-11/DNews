@@ -31,7 +31,7 @@ const page = ({params}: {params: {id:string}}) => {
       <MotionDiv
       initial={{opacity:0, y:50}}
       whileInView={{opacity:0.8, y:0, transition:{duration:0.5}}}
-       className="p-4 flex flex-col gap-3 mb-10">
+       className="p-2 md:p-4 flex flex-col gap-3 mb-10">
         <Back cancel={false}/>
         
         <h3 className="text-[28px] capitalize font-bold font-primary md:w-3/4 text-dark">{article.title}</h3>

@@ -13,7 +13,7 @@ const Layout = ({
     <div className="font-secondary flex flex-col md:flex-row">
         <MobileHeader/>
         <Sidebar/>
-        <section className="md:flex-1 h-svh overflow-y-scroll">
+        <section className="md:flex-1 md:h-svh md:overflow-y-scroll">
           <HorizontalAds bg='primary'/>
           <main className="grid md:grid-cols-4 overflow-x-hidden">
             <div className="md:col-span-3">
