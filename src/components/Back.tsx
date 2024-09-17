@@ -1,12 +1,16 @@
 "use client"
-import { useRouter, usePathname, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { useAppDispatch, useAppSelector } from "@/lib/hooks";
+import { setSearch } from "@/lib/features/contentSlice";
 
 const Back = ({cancel}:{cancel:boolean}) => {
-    const router = useRouter();
+  const dispatch = useAppDispatch();
+  const router = useRouter();
 
-    const backToPreviousPage = () => {
-        router.back()
-    }
+  const backToPreviousPage = () => {
+    dispatch(setSearch({text:''}));
+    router.back()
+  }
   return (
     <div onClick={backToPreviousPage} className={`back transition-colors cursor-pointer flex items-center text-primary font-semibold hover:text-accent w-max hover:underline`}>
         {

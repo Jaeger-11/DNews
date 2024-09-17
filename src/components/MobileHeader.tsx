@@ -29,9 +29,9 @@ const MobileHeader = () => {
   }
 
   const handleSearch = () => {
-      router.push('/#searchResults')
-      setIsOpen(false);
-      dispatch(setSearch({text:it}));
+    router.push('/#searchResults')
+    setIsOpen(false);
+    dispatch(setSearch({text:it}));
   }
 
   return (
@@ -53,9 +53,9 @@ const MobileHeader = () => {
 
         { isOpen && 
         <motion.nav 
-        initial={{opacity:0.7, x:-80}}
-        whileInView={{opacity:1, x:0, transition:{duration:1}}}
-        className={`absolute w-full bg-light top-[100%] left-0 border-b`}>
+        initial={{opacity:0.8, x:-80}}
+        whileInView={{opacity:1, x:0, transition:{duration:0.5}}}
+        className={`absolute w-full bg-light top-[100%] left-0 border-b-2 border-b-dark`}>
           {/* search */}
           <section className='p-2 bg-secondary'>
             <div className="border w-full bg-light border-dark rounded-sm flex gap-2 items-center">

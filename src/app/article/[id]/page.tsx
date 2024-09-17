@@ -13,6 +13,7 @@ import MotionDiv from "@/components/MotionDiv";
 
 const page = ({params}: {params: {id:string}}) => {
   const article  = newsArticles.find((item) => item.id.toString() === params.id);
+  console.log(article)
   let comments:comment[] = []
   
   const FetchComments = () => {
@@ -30,7 +31,7 @@ const page = ({params}: {params: {id:string}}) => {
       {article ? 
       <MotionDiv
       initial={{opacity:0, y:50}}
-      whileInView={{opacity:0.8, y:0, transition:{duration:0.5}}}
+      whileInView={{opacity:1, y:0, transition:{duration:0.5}}}
        className="p-2 md:p-4 flex flex-col gap-3 mb-10">
         <Back cancel={false}/>
         

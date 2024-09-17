@@ -29,7 +29,7 @@ const Sidebar:React.FC = () => {
     })
 
     const selectCategory = (cat:string) => {
-        router.push('/')
+        router.push('/#searchResults')
         setSelectedCategory(cat);
         dispatch(setCategory({category:cat}));
     }
@@ -62,7 +62,7 @@ const Sidebar:React.FC = () => {
             {/* Categories */}
             <div >
                 <p className="font-semibold text-primary mb-2">Categories</p>
-                <ul className="flex flex-col gap-1 text-sm h-[50svh] overflow-y-scroll pb-6 pl-1">
+                <ul className="flex flex-col gap-1 text-sm h-[50svh] overflow-y-scroll pb-2 pl-1">
                 {
                     newsCategories.map((newsCategory) => {
                         return <li onClick={() => selectCategory(newsCategory)} key={newsCategory} className={` ${category.toLowerCase() === newsCategory.toLowerCase() ? ' text-accent font-semibold' : 'text-primary'} capitalize w-max cursor-pointer hover:text-accent hover:scale-105 hover:font-medium transition-all`}>{newsCategory}</li>

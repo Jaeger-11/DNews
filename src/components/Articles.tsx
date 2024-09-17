@@ -18,27 +18,22 @@ const Articles = () => {
         if(category.toLowerCase() === 'latest news'){
             setArticles(newsArticles)
         } else {
-            let data:article[] = []
-            newsArticles.map((item) => {
-                if(item.category.toLowerCase() === category.toLowerCase()){
-                    data.push(item)
-                }
-            })
+            let data:article[] = newsArticles.filter((item) => item.category.toLowerCase() === category.toLowerCase())
             setArticles(data);
         }
     }
 
     const searchArticles = () => {
-        let data:article[] = []
-        newsArticles.map((item) => {
-            if(item.title.toLowerCase().includes(param)){
-                data.push(item);
-            }
-        })
-        setArticles(data);
+        let data:article[] = newsArticles.filter((item) => item.title.toLowerCase().includes(param.toLowerCase()))
         if(param.length > 0){
+            setArticles(data);
             dispatch(setCategory({category:'Top Matches'}))
         }
+    }
+
+    const refreshArticles = () => {
+        dispatch(setCategory({category:'latest news'}))
+        setArticles(newsArticles);
     }
 
     useEffect(() => {
@@ -49,28 +44,34 @@ const Articles = () => {
         filterByCategory();
     },[category])
 
+    let it:number = 0
+
   return (
-    <motion.section
-    initial={{opacity:0, y:50}}
-    whileInView={{opacity:0.8, y:0, transition:{duration:1}}}
-    >
+    <section  id="searchResults">
         <Header/>
         <main className="grid grid-cols-1 pb-10">
             {articles.length > 0 ? articles.map((item:article) => {
+                it++
                 return (
-                    <Article {...item} key={item.id}/>
+                    <div key={item.id}>
+                    {(it % 20 === 0) ?
+                        <>
+                            <HorizontalAds bg="transparent"/>
+                            <Article {...item} key={item.id}/>
+                        </> : 
+                        <Article {...item} key={item.id}/>
+                    }
+                    </div>
                 )
             }) : 
             <h3 className="font-semibold p-2 mt-4">
-                No News in this category yet! <span className="text-accent underline italic"> View Latest News </span>
+                No Matches! <span className="text-accent cursor-pointer underline italic" onClick={refreshArticles}> View Latest News </span>
             </h3>
             }
         </main>
         <HorizontalAds bg="transparent"/>
-    </motion.section>
+    </section>
   )
 }
 
 export default Articles
-
-// https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
