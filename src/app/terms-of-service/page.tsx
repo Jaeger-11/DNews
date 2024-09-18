@@ -48,13 +48,13 @@ const page = () => {
           <article>
             <h2 className="text-xl capitalize font-semibold mb-2 text-primary font-primary">Content</h2>
             <div className="flex flex-col gap-4">
-              <div className="">
+              <div>
                 <span className="font-semibold">User-Generated Content</span>
-                <p>By submitting or posting content (e.g., comments, reviews) on DNews, you grant us a non-exclusive, royalty-free, worldwide, and perpetual license to use, display, reproduce, modify, and distribute such content on the Service.
+                <p>By submitting or posting content e.g. comments on DNews, you grant us a non-exclusive, royalty-free, worldwide, and perpetual license to use, display, reproduce, modify, and distribute such content on the Service.
                   <br />
                   You are solely responsible for any content you submit, and you represent and warrant that you have all necessary rights to grant the license above.</p>
               </div>
-              <div className="">
+              <div>
                 <span className="font-semibold">Prohibited Content</span>
                 <p>You agree not to post content that is offensive, harmful, misleading, or otherwise inappropriate. DNews reserves the right to remove any content at its discretion that violates these Terms or is otherwise objectionable.</p>
               </div>
@@ -72,12 +72,8 @@ const page = () => {
 
           <article>
             <h2 className="text-xl capitalize font-semibold mb-2 text-primary font-primary">Disclaimer of Warranties</h2>
-            <p>The Service may contain links to third-party websites or services. DNews is not responsible for the content, policies, or practices of any third-party websites. Your use of third-party links is at your own risk, and we encourage you to review the terms and privacy policies of any third-party websites you visit.</p>
-          </article>
-
-          <article>
-            <h2 className="text-xl capitalize font-semibold mb-2 text-primary font-primary">Termination</h2>
-            <p>DNews is provided on an "as is" and "as available" basis, without warranties of any kind, either express or implied. We do not warrant that the Service will be uninterrupted, error-free, or secure, nor do we make any representations regarding the accuracy or reliability of the content available through the Service. <br /> To the fullest extent permitted by law, we disclaim all warranties, including but not limited to warranties of merchantability, fitness for a particular purpose, non-infringement, and any warranties arising from the course of performance or usage of trade.</p>
+            <p>DNews is provided on an &quot;as is&quot; and &quot;as available&quot; basis, without warranties of any kind, either express or implied. We do not warrant that the Service will be uninterrupted, error-free, or secure, nor do we make any representations regarding the accuracy or reliability of the content available through the Service. <br /> To the fullest extent permitted by law, we disclaim all warranties, including but not limited to warranties of merchantability, fitness for a particular purpose, non-infringement, and any warranties arising from the course of performance or usage of trade.
+            </p>
           </article>
 
           <article>
@@ -88,6 +84,11 @@ const page = () => {
               <li>Your violation of these Terms;</li>
               <li>Your violation of any third-party rights, including intellectual property rights.</li>
             </ul>
+          </article>
+
+          <article>
+            <h2 className="text-xl capitalize font-semibold mb-2 text-primary font-primary">Termination</h2>
+            <p>We may suspend or terminate your access to the Service at any time, with or without notice, for conduct that we believe violates these Terms or is otherwise harmful to DNews or other users.</p>
           </article>
 
           <article>
