@@ -7,7 +7,7 @@ const page = () => {
       {/* <Back cancel={false}/> */}
       <div className='text-dark p-2'>
         <h3 className="font-primary text-primary font-semibold text-2xl mb-2">Privacy Policy</h3>
-        <p>At DNews, your privacy is a priority. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website and mobile application (collectively, the &quot;Service&quot;). Please read this policy carefully to understand our practices regarding your personal data.</p>
+        <p>At DNews, your privacy is a priority. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website and mobile application. Please read this policy carefully to understand our practices regarding your personal data.</p>
 
         <section className="my-4 flex flex-col gap-4 [&_ul]:list-disc">
           <article>
