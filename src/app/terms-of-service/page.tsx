@@ -1,8 +1,12 @@
-import React from 'react'
+import Layout from "@/components/Layout"
 
 const page = () => {
   return (
-    <div>page</div>
+    <Layout>
+      <div>
+        
+      </div>
+    </Layout>
   )
 }
 
