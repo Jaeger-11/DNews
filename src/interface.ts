@@ -17,7 +17,7 @@ export interface apiArticle{
 }
 
 export interface authenticate{
-    username?: string;
+    username?: any;
     email: string;
     password: string;
 }
