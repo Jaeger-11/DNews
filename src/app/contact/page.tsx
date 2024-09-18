@@ -2,10 +2,12 @@ import React from 'react'
 import Layout from '@/components/Layout'
 import HorizontalAds from '@/components/HorizontalAds'
 import ContactForm from '@/components/ContactForm'
+import Back from '@/components/Back'
 
 const page = () => {
   return (
     <Layout>
+      {/* <Back cancel={false}/> */}
       <div className='text-dark p-2 md:p-4 md:w-3/4'>
         <h3 className="font-primary text-primary font-semibold text-2xl">Contact Us</h3>
         <p>We’re here to help and answer any questions you might have. We look forward to hearing from you!</p>
