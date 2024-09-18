@@ -6,7 +6,7 @@ import ApiArticle from "./ApiArticle";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { setCategory, setSearch } from "@/lib/features/contentSlice";
+import { setCategory, clearSearch } from "@/lib/features/contentSlice";
 
 const ApiArticles = () => {
     const dispatch = useAppDispatch();
@@ -24,6 +24,7 @@ const ApiArticles = () => {
     }
 
     const refreshArticles = () => {
+        dispatch(clearSearch())
         setSearchResponse(articles);
     }
 
@@ -42,7 +43,10 @@ const ApiArticles = () => {
 
     return (
     <section className="scroll-padding" id="searchResults">
-        <Header/>
+        <div className="flex justify-between items-center">
+            <Header/>
+            { param && <p className="text-sm font-semibold italic hover:underline transition-all text-red-500 cursor-pointer" onClick={refreshArticles}>Cancel Search</p>}
+        </div>
         <main className="pb-10">
             <div>
                 {searchResponse.length === 0 && param.length > 0 ?

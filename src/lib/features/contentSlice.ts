@@ -18,9 +18,12 @@ const contentSlice = createSlice({
         },
         setSearch: (state, {payload}) => {
             state.param = payload.text;
+        }, 
+        clearSearch: (state) => {
+            state.param = ""
         }
     }
 })
 
-export const { setCategory, setSearch } = contentSlice.actions;
+export const { setCategory, setSearch, clearSearch } = contentSlice.actions;
 export default contentSlice.reducer;
