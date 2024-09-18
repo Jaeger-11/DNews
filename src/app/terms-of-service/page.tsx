@@ -78,7 +78,7 @@ const page = () => {
 
           <article>
             <h2 className="text-xl capitalize font-semibold mb-2 text-primary font-primary">Indemnification</h2>
-            <p>You agree to indemnify, defend, and hold harmless DNews, its affiliates, and their respective officers, directors, employees, and agents from and against any and all claims, liabilities, damages, losses, and expenses, including reasonable attorney's fees, arising out of or in any way connected with: </p>
+            <p>You agree to indemnify, defend, and hold harmless DNews, its affiliates, and their respective officers, directors, employees, and agents from and against any and all claims, liabilities, damages, losses, and expenses, including reasonable attorney&apos;s fees, arising out of or in any way connected with: </p>
             <ul className="[&_li]:ml-4">
               <li>Your use of the Service;</li>
               <li>Your violation of these Terms;</li>
