@@ -39,7 +39,7 @@ export const shuffleArticle = (list:article[]) => {
 
 export const initials = (username:string) => {
     let splitted = username.split(' ');
-    let letters = `${splitted[0][0]}${splitted[1][0]}`
+    let letters = splitted.length > 1 ? `${splitted[0][0]}${splitted[1][0]}` : `${splitted[0][0]}${splitted[0][1]}`
     return letters
 }
 

@@ -8,6 +8,7 @@ const Comment = (data:comment) => {
     <MotionDiv 
     initial={{opacity:0, y:50}}
     whileInView={{opacity:1, y:0, transition:{duration:0.5}}}
+    viewport={{once:true}}
     className="p-2 pb-4 flex gap-2 border-b">
         <div className="text-primary bg-secondary uppercase rounded-full size-10 flex items-center justify-center font-semibold">{initials(username)}</div>
         <div className="flex-1">
