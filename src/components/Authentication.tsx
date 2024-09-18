@@ -68,12 +68,13 @@ const Authentication = () => {
         else if(password.length < 8){
             setAuthError("Password cannot be less than 8(eight) characters.")
         }
-        else if(newAccount && username.length < 3){
-            setAuthError("Username cannot be less than 3(three) characters.")
-        }
         else if(newAccount && email && password && username){
             // CREATE ACCOUNT
-            handleCreateAccount();
+            if(username.length < 3){
+                setAuthError("Username cannot be less than 3(three) characters.")
+            } else {
+                handleCreateAccount();
+            }
         } 
         else if (!newAccount && email && password){
             // LOGIN 
