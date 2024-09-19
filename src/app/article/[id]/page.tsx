@@ -35,7 +35,7 @@ const page = ({params}: {params: {id:string}}) => {
        className="p-2 md:p-4 flex flex-col gap-3 mb-10">
         <Back cancel={false}/>
         
-        <h3 className="text-[28px] capitalize font-bold font-primary md:w-3/4 text-dark">{article.title}</h3>
+        <h3 className="text-[28px] xl:text-4xl capitalize font-bold font-primary md:w-3/4 text-dark">{article.title}</h3>
         <p>{article.category}</p>
         <div>
           <Image 
@@ -50,11 +50,11 @@ const page = ({params}: {params: {id:string}}) => {
         <div className="">
           <p className="flex justify-between items-center text-base mb-2"> 
             <span className="font-semibold text-accent">{article.author}</span> 
-            <span className="text-sm text-primary">{formatDate(article.publishedDate)}</span> 
+            <span className="text-sm xl:text-base text-primary">{formatDate(article.publishedDate)}</span> 
           </p>
           <p>
             {article.tags.map((item) => {
-              return <span key={item} className="p-1 bg-secondary mr-2 capitalize text-sm text-primary">{item} </span>
+              return <span key={item} className="p-1 bg-secondary mr-2 capitalize text-sm xl:text-base text-primary">{item} </span>
             })}
           </p>
         </div>
@@ -65,7 +65,7 @@ const page = ({params}: {params: {id:string}}) => {
 
         <section>
           {/* COMMENTS */}
-          <h2 className="text-xl font-primary uppercase font-semibold text-primary mb-2">Comments</h2>
+          <h2 className="text-xl xl:text-2xl font-primary uppercase font-semibold text-primary mb-2">Comments</h2>
           <InputComment id={params.id}/>
 
           <section className="my-2 border-t">
@@ -73,7 +73,7 @@ const page = ({params}: {params: {id:string}}) => {
               comments.map((item:comment) => {
                 return <Comment{...item} key={item.id}/>
               }) : 
-              <h3 className="font-semibold capitalize mt-4">No Comments yet, be the first!</h3>
+              <h3 className="font-semibold capitalize mt-4 xl:text-base">No Comments yet, be the first!</h3>
             }
             <FirebaseComments id={`${params.id}`}/>
           </section>

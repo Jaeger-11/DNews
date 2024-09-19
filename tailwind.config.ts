@@ -12,7 +12,7 @@ const config: Config = {
       smd: '600px',
       md: '825px',
       lg: '976px',
-      xl: '1440px'
+      xl: '1300px'
     },
     extend: {
       backgroundImage: {

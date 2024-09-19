@@ -13,8 +13,8 @@ const ApiArticle = ({ id, title, body}:apiArticle) => {
     >
       <Link href={`/api-article/${id}`} key={id} className="cursor-pointer block p-2 border-b border-secondary text-dark hover:bg-secondary transition-colors">
         <div className="md:grid md:grid-cols-3 gap-2 hover:text-accent flex flex-col-reverse">
-            <h3 className="text-xl leading-tight font-medium font-primary capitalize">{title}</h3>
-            <p className="text-sm leading-tight hidden md:block">{body.slice(0,100)+'...'}</p>
+            <h3 className="text-xl xl:text-2xl leading-tight font-medium font-primary capitalize">{title}</h3>
+            <p className="text-sm xl:text-base leading-tight hidden md:block">{body.slice(0,100)+'...'}</p>
             <Image 
             width={200}
             height={200}
@@ -23,7 +23,7 @@ const ApiArticle = ({ id, title, body}:apiArticle) => {
             className="w-full md:w-4/5 aspect-video object-cover object-center"
             />
         </div>
-        <div className="capitalize grid grid-cols-2 md:grid-cols-3 gap-2 text-sm mt-4 mb-2 md:mt-2">
+        <div className="capitalize grid grid-cols-2 md:grid-cols-3 gap-2 text-sm xl:text-base mt-4 mb-2 md:mt-2">
             <p className="font-semibold">{'Falodun Damilola'}</p>
             <p className="hidden md:block">{'World'}</p>
             <p className="text-primary text-right md:text-left">{'23rd-August-2024'}</p>
