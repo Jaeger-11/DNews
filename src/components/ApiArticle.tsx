@@ -13,7 +13,7 @@ const ApiArticle = ({ id, title, body}:apiArticle) => {
     >
       <Link href={`/api-article/${id}`} key={id} className="cursor-pointer block p-2 border-b border-secondary text-dark hover:bg-secondary transition-colors">
         <div className="md:grid md:grid-cols-3 gap-2 hover:text-accent flex flex-col-reverse">
-            <h3 className="text-xl xl:text-2xl leading-tight font-medium font-primary capitalize">{title}</h3>
+            <h3 className="text-xl xl:text-2xl leading-tight font-semibold font-primary capitalize">{title}</h3>
             <p className="text-sm xl:text-base leading-tight hidden md:block">{body.slice(0,100)+'...'}</p>
             <Image 
             width={200}

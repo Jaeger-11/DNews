@@ -7,7 +7,7 @@ const Article = ({imageUrl, id, title, brief, author, category, publishedDate}:a
   return (
   <Link href={`/article/${id}`} key={id} className="cursor-pointer block p-2 border-b border-secondary text-dark hover:bg-secondary transition-colors mb-2 md:mb-0">
     <div className="flex flex-col-reverse md:grid md:grid-cols-3 gap-2 hover:text-accent">
-        <h3 className="text-xl xl:text-2xl leading-tight font-medium font-primary capitalize">{title}</h3>
+        <h3 className="text-xl xl:text-2xl leading-tight font-semibold font-primary capitalize">{title}</h3>
         <p className="hidden md:block text-sm xl:text-base leading-tight">{brief}</p>
         <Image 
         width={200}
