@@ -10,6 +10,7 @@ const LogOut = () => {
         signOut(auth).then(() => {
             // Sign-out successful.
             dispatch(logOut())
+            alert("Successfully Logged Out")
         }).catch((error) => {
         // An error happened.
         console.log(error)

@@ -10,7 +10,7 @@ const Aside = () => {
         <section>
             {/* Top Stories */}
             <h3 className="text-base text-primary font-semibold pb-2">Top Stories</h3>
-            <ul className="flex flex-col gap-1 list-disc">
+            <ul className="flex flex-col gap-1">
                 {newsArticles.slice(0, 11).map((item:article) => {
                     return (
                     <li
