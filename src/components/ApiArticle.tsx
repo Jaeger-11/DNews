@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { apiArticle } from "@/interface";
-import { formatDate } from "@/utils";
 import MotionDiv from "./MotionDiv";
+import { randomImages } from "@/data";
 
 const ApiArticle = ({ id, title, body}:apiArticle) => {
+  const imageUrl = randomImages[Math.floor(Math.random() * randomImages.length)];
   return (
     <MotionDiv
     initial={{opacity:0, y:50}}
@@ -18,7 +19,7 @@ const ApiArticle = ({ id, title, body}:apiArticle) => {
             <Image 
             width={200}
             height={200}
-            src={'https://images.unsplash.com/photo-1616164942261-243e6209c40f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGFydGljbGVzJTIwY2xpbWF0ZXxlbnwwfDB8MHx8fDA%3D'}
+            src={imageUrl}
             alt={title}
             className="w-full md:w-4/5 aspect-video object-cover object-center"
             />
