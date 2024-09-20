@@ -22,6 +22,10 @@ const adsVerticalData = [
     imageUrl: 'https://tpc.googlesyndication.com/daca_images/simgad/10955139048168598845',
     siteUrl: 'https://periscopeng.com'
   },
+  {
+    imageUrl: 'https://s.adroll.com/a/FHH/DPH/FHHDPHDDAFCGFBFIKTMVP7.png',
+    siteUrl: 'https://periscopeng.com'
+  }
 ]
 
 const VerticalAds = () => {
