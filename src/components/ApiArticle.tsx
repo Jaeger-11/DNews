@@ -9,7 +9,7 @@ const ApiArticle = ({ id, title, body}:apiArticle) => {
     <MotionDiv
     initial={{opacity:0, y:50}}
     whileInView={{opacity:1, y:0, transition:{duration:0.5}}}
-    
+    viewport={{once:true}}
     >
       <Link href={`/api-article/${id}`} key={id} className="cursor-pointer block p-2 border-b border-secondary text-dark hover:bg-secondary transition-colors">
         <div className="md:grid md:grid-cols-3 gap-2 hover:text-accent flex flex-col-reverse">
