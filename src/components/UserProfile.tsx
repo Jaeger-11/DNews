@@ -18,14 +18,7 @@ const UserProfile = () => {
         if(uid.length > 0){
             onSnapshot(doc(db, "users", uid), (doc) => {
                 setBookmarks(doc.data()?.bookmarks);
-                // let items:any[] = []
-                // doc.data()?.bookmarks.map((item:{articleId:string}) => {
-                //     let data = fetchBookmark(item.articleId)
-                //     items.push(data);
-                // })
-                // setBookmarks(items)
             });
-            // console.log(bookmarks)
         }
     }
     
@@ -40,15 +33,8 @@ const UserProfile = () => {
             info = data.data
         )
         .catch(error => console.log(error))
-        // console.log(info)
         return info;
     }
-
-    // useEffect(() => {
-    //     bookmarks.map((item) => {
-    //         fetchBookmark(item.articleId)
-    //     })
-    // }, [])
 
   return (
     <section className="p-2">
@@ -67,10 +53,8 @@ const UserProfile = () => {
             <h3 className="font-primary text-2xl font-semibold text-primary my-4">Your Bookmarks</h3>
             <div>
                 {bookmarks.length > 0 && bookmarks.map((id:{articleId:string}) => {
-                    // const data = fetchBookmark(id.articleId)
                     return ( 
                         <BookmarkItem articleId={id.articleId} key={id.articleId}/>
-                        // <ApiArticle  {...data}/>
                     )
                 })}
             </div>

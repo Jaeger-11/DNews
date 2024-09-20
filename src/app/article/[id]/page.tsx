@@ -52,7 +52,7 @@ const page = ({params}: {params: {id:string}}) => {
         
         <div className="">
           <p className="flex justify-between items-center text-base mb-2"> 
-            <span className="font-semibold text-accent">{article.author}</span> 
+            <span className="font-semibold text-primary">{article.author}</span> 
             <span className="text-sm xl:text-base text-primary">{formatDate(article.publishedDate)}</span> 
           </p>
           <p>
@@ -62,7 +62,7 @@ const page = ({params}: {params: {id:string}}) => {
           </p>
         </div>
 
-        <p>{article.content} {article.content}</p>
+        <p className="first-letter:uppercase xl:text-base">{article.content} {article.content}</p>
 
         <Bookmark id={params.id}/>
 

@@ -11,6 +11,7 @@ import Bookmark from "@/components/Bookmark";
 import { shuffleArticle } from "@/utils";
 import ApiArticle from "@/components/ApiArticle";
 import { randomImages } from "@/data";
+import Share from "@/components/Share";
 
 const page = async ({params}: {params: {id:string}}) => {
     const newsArticles:apiArticle[] = await FetchArticles();
@@ -39,14 +40,17 @@ const page = async ({params}: {params: {id:string}}) => {
         
         <div className="">
           <p className="flex justify-between items-center text-base mb-2"> 
-            <span className="font-semibold text-accent">{'Falodun Oluwadamilola'}</span>
+            <span className="font-semibold text-primary">{'Falodun Oluwadamilola'}</span>
             <span className="text-sm xl:text-base text-primary">{'23rd August 2024'}</span> 
           </p>
         </div>
 
-        <p className="xl:text-base">{article.body} {article.body}</p>
+        <p className="xl:text-base first-letter:uppercase">{article.body}, {article.body}, {article.body}.</p>
 
-        <Bookmark id={params.id}/>
+        <div className="flex flex-col gap-2 md:flex-row md:justify-between md:items-center">
+          <Share/>
+          <Bookmark id={params.id}/>
+        </div>
 
         <section>
           {/* COMMENTS */}

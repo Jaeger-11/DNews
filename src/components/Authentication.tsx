@@ -31,7 +31,6 @@ const Authentication = () => {
         signInWithEmailAndPassword(auth, userData.email, userData.password)
         .then((userCredential) => {
             setAuthError("")
-            console.log("User Signed In Successfully")
             setUserData({email:"", password:"", username: ""})
             router.push('/')
         })
