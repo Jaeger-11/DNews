@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FetchArticle, FetchComments } from "@/utils";
+import { FetchArticle, FetchArticles, FetchComments } from "@/utils";
 import Back from "@/components/Back";
 import Layout from "@/components/Layout";
 import { apiArticle } from "@/interface";
@@ -8,9 +8,13 @@ import ApiComment from "@/components/ApiComment";
 import FirebaseComments from "@/components/FirebaseComments";
 import HorizontalAds from "@/components/HorizontalAds";
 import Bookmark from "@/components/Bookmark";
+import { shuffleArticle } from "@/utils";
+import ApiArticle from "@/components/ApiArticle";
 
 const page = async ({params}: {params: {id:string}}) => {
+    const newsArticles:apiArticle[] = await FetchArticles();
     const article:apiArticle = await FetchArticle(params.id);
+    const otherArticles = newsArticles.filter((i) => i.title !== article?.title)
     const comments = await FetchComments(params.id)
   
   return (
@@ -36,11 +40,6 @@ const page = async ({params}: {params: {id:string}}) => {
             <span className="font-semibold text-accent">{'Falodun Oluwadamilola'}</span>
             <span className="text-sm xl:text-base text-primary">{'23rd August 2024'}</span> 
           </p>
-          <p>
-            {/* {article.tags.map((item) => {
-              return <span key={item} className="p-1 bg-secondary mr-2 capitalize text-sm text-primary">{item} </span>
-            })} */}
-          </p>
         </div>
 
         <p className="xl:text-base">{article.body} {article.body}</p>
@@ -62,6 +61,15 @@ const page = async ({params}: {params: {id:string}}) => {
             }
           </section>
         </section>
+
+        <section>
+        <h2 className="text-xl xl:text-2xl font-primary uppercase font-semibold text-primary mb-2">Similar Articles</h2>
+        <section>
+          {shuffleArticle(otherArticles).map((item:apiArticle) => {
+            return <ApiArticle {...item} key={item.id}/>
+          })}
+        </section>
+      </section>
       </article>
       : undefined
     }

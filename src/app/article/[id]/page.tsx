@@ -16,7 +16,6 @@ const page = ({params}: {params: {id:string}}) => {
   const article  = newsArticles.find((item) => item.id.toString() === params.id);
   const otherArticles = newsArticles.filter((i) => i.title !== article?.title)
   const relatedArticlesByCategory = shuffleArticle(otherArticles.filter((item) => item.category === article?.category));
-  console.log(relatedArticlesByCategory)
   let comments:comment[] = []
   
   const FetchComments = () => {

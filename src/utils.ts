@@ -1,4 +1,3 @@
-import { article } from "./interface";
 import { useAxios } from "./axios";
 
 export const formatDate = (dateString: string): string => {
@@ -20,7 +19,7 @@ export const formatDate = (dateString: string): string => {
     return `${day}-${month}-${year} ${formattedHours}:${formattedMinutes}`;
 }
 
-export const shuffleArticle = (list:article[]) => {
+export const shuffleArticle = (list:any[]) => {
     let updatedList = [...list]
     var currentIndex = updatedList.length; 
     var randomIndex;
