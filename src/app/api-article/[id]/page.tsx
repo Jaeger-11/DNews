@@ -53,13 +53,13 @@ const page = async ({params}: {params: {id:string}}) => {
           <InputComment id={params.id}/>
 
           <section className="my-2 border-t">
+            <FirebaseComments id={`${params.id}`}/>
             { comments.length > 0 ?
               comments.map((item:{name:string, body:string, id:number}) => {
                 return <ApiComment{...item} key={item.id}/>
               }) : 
               <h3 className="font-semibold capitalize mt-4 xl:text-base">No Comments yet, be the first!</h3>
             }
-            <FirebaseComments id={`${params.id}`}/>
           </section>
         </section>
       </article>

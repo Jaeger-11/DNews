@@ -18,7 +18,7 @@ const MobileHeader = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [it, setIt] = useState<string>('')
   const selectCategory = (cat:string) => {
-    router.push('/')
+    router.push('/#searchResults')
     setIsOpen(false)
     setSelectedCategory(cat);
     dispatch(setCategory({category:cat}));

@@ -1,19 +1,22 @@
 import { newsArticles, articleComments } from "@/data";
 import Image from "next/image";
-import { formatDate } from "@/utils";
+import { formatDate, shuffleArticle } from "@/utils";
 import Back from "@/components/Back";
 import Layout from "@/components/Layout";
 import Comment from "@/components/Comment";
-import { comment } from "@/interface";
+import { article, comment } from "@/interface";
 import InputComment from "@/components/InputComment";
 import HorizontalAds from "@/components/HorizontalAds";
 import Bookmark from "@/components/Bookmark";
 import FirebaseComments from "@/components/FirebaseComments";
 import MotionDiv from "@/components/MotionDiv";
+import Article from "@/components/Article";
 
 const page = ({params}: {params: {id:string}}) => {
   const article  = newsArticles.find((item) => item.id.toString() === params.id);
-  console.log(article)
+  const otherArticles = newsArticles.filter((i) => i.title !== article?.title)
+  const relatedArticlesByCategory = shuffleArticle(otherArticles.filter((item) => item.category === article?.category));
+  console.log(relatedArticlesByCategory)
   let comments:comment[] = []
   
   const FetchComments = () => {
@@ -32,6 +35,7 @@ const page = ({params}: {params: {id:string}}) => {
       <MotionDiv
       initial={{opacity:0, y:50}}
       whileInView={{opacity:1, y:0, transition:{duration:0.5}}}
+      viewport={{once:true}}
        className="p-2 md:p-4 flex flex-col gap-3 mb-10">
         <Back cancel={false}/>
         
@@ -69,13 +73,29 @@ const page = ({params}: {params: {id:string}}) => {
           <InputComment id={params.id}/>
 
           <section className="my-2 border-t">
-            { comments.length > 0 ?
+            <FirebaseComments id={`${params.id}`}/>
+            { 
+              comments.length > 0 ?
               comments.map((item:comment) => {
                 return <Comment{...item} key={item.id}/>
               }) : 
               <h3 className="font-semibold capitalize mt-4 xl:text-base">No Comments yet, be the first!</h3>
             }
-            <FirebaseComments id={`${params.id}`}/>
+          </section>
+        </section>
+
+        <section>
+          <h2 className="text-xl xl:text-2xl font-primary uppercase font-semibold text-primary mb-2">Similar Articles</h2>
+          <section>
+            {
+              relatedArticlesByCategory ? 
+              relatedArticlesByCategory.map((item:article) => {
+                return <Article {...item} key={item.id}/>
+              }) : 
+              shuffleArticle(otherArticles).map((item:article) => {
+                return <Article {...item} key={item.id}/>
+              })
+            }
           </section>
         </section>
       </MotionDiv>
