@@ -25,13 +25,14 @@ const MobileHeader = () => {
   }
 
   const handleInput = ({target}:React.ChangeEvent<HTMLInputElement>) => {
+    router.push('/')
     setIt(target.value);
   }
 
   const handleSearch = () => {
-    router.push('/#searchResults')
-    setIsOpen(false);
     dispatch(setSearch({text:it}));
+    setIsOpen(false);
+    router.push('/#searchResults')
   }
 
   return (
