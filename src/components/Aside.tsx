@@ -6,7 +6,7 @@ import VerticalAds from "./VerticalAds";
 const Aside = () => {
 
   return (
-    <aside className="p-4 bg-secondary min-h-[90svh]">
+    <aside className="p-4 border min-h-[90svh]">
         <section>
             {/* Top Stories */}
             <h3 className="text-base text-primary font-semibold pb-2">Top Stories</h3>
@@ -14,7 +14,7 @@ const Aside = () => {
                 {newsArticles.slice(0, 11).map((item:article) => {
                     return (
                     <li
-                     key={item.id} className="text-sm xl:text-base leading-tight cursor-pointer text-dark hover:text-accent hover:font-medium transition-colors"> 
+                     key={item.id} className="text-sm border-b pb-1 xl:text-base leading-tight cursor-pointer text-dark hover:text-accent hover:font-medium transition-colors"> 
                      <Link href={`/article/${item.id}`}>{item.title} </Link> 
                     </li>
                 )

@@ -1,14 +1,12 @@
 "use client"
 import { useAppSelector } from "@/lib/hooks";
 import LogOut from "./LogOut";
+import BookmarkItemAPI from "./BookmarkItemAPI";
 import BookmarkItem from "./BookmarkItem";
 import HorizontalAds from "./HorizontalAds";
 import { useState, useEffect } from "react";
 import { db } from "@/database/config";
 import { onSnapshot, doc } from "firebase/firestore";
-import axios from "axios";
-import { apiArticle } from "@/interface";
-import ApiArticle from "./ApiArticle";
 
 const UserProfile = () => {
     const { username, email, uid } = useAppSelector((state) => state.user);
@@ -26,16 +24,6 @@ const UserProfile = () => {
         runGet();
     }, [uid, runGet])
 
-    const fetchBookmark = (id:string) => {
-        let info = {}
-        axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`)
-        .then(data => 
-            info = data.data
-        )
-        .catch(error => console.log(error))
-        return info;
-    }
-
   return (
     <section className="p-2">
         <div className="flex items-center gap-2">
@@ -52,11 +40,12 @@ const UserProfile = () => {
         <section className="my-4 mt-8 border-t">
             <h3 className="font-primary text-2xl font-semibold text-primary my-4">Your Bookmarks</h3>
             <div>
-                {bookmarks.length > 0 && bookmarks.map((id:{articleId:string}) => {
+                {bookmarks.length > 0 ? bookmarks.map((id:{articleId:string}) => {
                     return ( 
+                        // <BookmarkItemAPI articleId={id.articleId} key={id.articleId}/>
                         <BookmarkItem articleId={id.articleId} key={id.articleId}/>
                     )
-                })}
+                }) : <h3 className="font-semibold text-red-500 capitalize mt-4 xl:text-base">No Bookmarks yet, Get one in!</h3>}
             </div>
         </section>
         <HorizontalAds bg="transparent"/>
