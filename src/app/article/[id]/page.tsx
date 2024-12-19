@@ -77,13 +77,13 @@ const page = ({params}: {params: {id:string}}) => {
 
           <section className="my-2 border-t">
             <FirebaseComments id={`${params.id}`}/>
-            { 
-              // comments.length > 0 ?
+            {/* { 
+              comments.length > 0 ?
               comments.map((item:comment) => {
                 return <Comment{...item} key={item.id}/>
               })  
-              // :<h3 className="font-semibold capitalize mt-4 xl:text-base">No Comments yet, be the first!</h3>
-            }
+              :<h3 className="font-semibold capitalize mt-4 xl:text-base">No Comments yet, be the first!</h3>
+            } */}
           </section>
         </section>
 
