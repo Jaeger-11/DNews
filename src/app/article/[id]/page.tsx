@@ -11,6 +11,7 @@ import Bookmark from "@/components/Bookmark";
 import FirebaseComments from "@/components/FirebaseComments";
 import MotionDiv from "@/components/MotionDiv";
 import Article from "@/components/Article";
+import Share from "@/components/Share";
 
 const page = ({params}: {params: {id:string}}) => {
   const article  = newsArticles.find((item) => item.id.toString() === params.id);
@@ -64,7 +65,10 @@ const page = ({params}: {params: {id:string}}) => {
 
         <p className="first-letter:uppercase xl:text-base">{article.content} {article.content}</p>
 
-        <Bookmark id={params.id}/>
+        <div className="flex flex-col gap-2 md:flex-row md:justify-between md:items-center">
+          <Share/>
+          <Bookmark id={params.id}/>
+        </div>
 
         <section>
           {/* COMMENTS */}
@@ -74,11 +78,11 @@ const page = ({params}: {params: {id:string}}) => {
           <section className="my-2 border-t">
             <FirebaseComments id={`${params.id}`}/>
             { 
-              comments.length > 0 ?
+              // comments.length > 0 ?
               comments.map((item:comment) => {
                 return <Comment{...item} key={item.id}/>
-              }) : 
-              <h3 className="font-semibold capitalize mt-4 xl:text-base">No Comments yet, be the first!</h3>
+              })  
+              // :<h3 className="font-semibold capitalize mt-4 xl:text-base">No Comments yet, be the first!</h3>
             }
           </section>
         </section>

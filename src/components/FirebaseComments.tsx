@@ -18,7 +18,7 @@ const FirebaseComments = (data:{id:string}) => {
     });
 
   return (
-    comments.map((item:{username:string, body:string, id:number}) => {
+    comments ? comments.map((item:{username:string, body:string, id:number}) => {
         return (
             <motion.article 
             initial={{opacity:0, y:50}}
@@ -32,7 +32,7 @@ const FirebaseComments = (data:{id:string}) => {
                 </div>
             </motion.article>
         )
-    })
+    }) : <h3 className="font-semibold capitalize mt-4 xl:text-base">No Comments yet, be the first!</h3>
   )
 }
 
